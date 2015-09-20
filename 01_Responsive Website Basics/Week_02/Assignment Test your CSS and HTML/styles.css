@@ -1,0 +1,26 @@
+/* modify border and alignment */
+h1{
+	/* change border */
+	border: 1px solid lightgray;
+	/* change text alignment */
+	text-align: center;
+}
+
+/* media query */
+@media (min-width: 500px){
+	/* modify h1 tags when query is true */
+	h1{
+		/* change text color */
+		color: red;
+	}
+}
+a{
+	color: green;
+}
+.changemeagain{
+	color: yellow;
+}
+.changeme{
+	color: red;
+}
+

@@ -1,0 +1,26 @@
+@media (min-width: 750px){
+	.responsive{
+		display: inline-block;
+		width: 200px;
+		border: 1px solid black;
+	}
+	/*
+		body{
+		background: red;
+	}
+	*/
+
+}
+@media (min-width: 1000px){
+	.responsive{
+		display: inline-block;
+		width: 450px;
+		border: 1px solid black;
+	}
+	
+	/*
+	body{
+		background: green;
+	}
+	*/
+}
