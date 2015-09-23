@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Image Rollover</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<img class='image' src='image02.jpg' />
+
+	<!-- import jQuery from CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- other scripts -->
+
+	<!-- step 2 script-->
+	<!--<script type="text/javascript">
+		$('.image').click(function(){
+			console.log('hello');
+		});
+	</script>-->
+
+	<!-- step 3 script -->
+	<!--<script type="text/javascript">
+		$('.image').click(function(){
+			$(this).attr('src', 'image01.jpg');
+		});
+	</script>-->
+
+	<!-- step 4 script -->
+	<script type="text/javascript">
+		$('.image').mouseover(function(){
+			$(this).attr('src', 'image01.jpg');
+		});
+	</script>
+
+</body>
+
+</html>

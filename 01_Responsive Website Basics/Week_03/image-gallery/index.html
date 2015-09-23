@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Image Gallery</title>
+
+	<!-- import bootstrap from CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- import our own stylesheet -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+	<!-- some header info (from Matthew's code) -->
+	<a href="index.html">Home</a> &nbsp;
+	<a href="aboutme.html">About me</a> &nbsp;
+	<a href="contact.html" class="greenlink">Contact me</a>
+
+	<hr></hr>
+
+	<div class="container">
+		<h1>Image Gallery</h1>
+
+		<!-- thumbnail section -->
+		<div class="row">
+			<div class="col-md-3">
+				<img class="crop-img" src="img_1.jpg" alt="graffittied building" />
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" src="img_3.jpg" alt="display of cheese" />
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" src="img_4.jpg" alt="synethesizer workshop" />
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" src="img_5.jpg" alt="City night" />
+			</div>
+		</div>
+
+		<!-- large image -->
+		<div class="row">
+			<div class="col-md-12">
+				<img id="bigImage" class="large-img" src="img_1.jpg" alt="graffittied building" />
+			</div>
+		</div>
+	</div>
+
+	<!-- scripts -->
+
+	<!-- import jQuery from CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- other scripts -->
+	<script>
+		// when we click on the thumbnail
+		// we set the src attribute of the 
+		// bit image to be the same as the 
+		// src of the image we have clicked on
+		// ("this"). This loads the same
+		// image file into the big image
+		$(".crop-img").click(function(){
+			$("#bigImage").attr('src', 
+				$(this).attr('src'));
+		});
+	</script>
+
+</body>
+
+</html>
