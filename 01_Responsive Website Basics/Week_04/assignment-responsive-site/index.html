@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Grocery List</title>
+
+	<!-- bootstrap css import -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- other css imports -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>Simple Grocery List</h1>
+		<p>
+			<strong>Instructions: </strong>Add items to the list by typing in an item in the <code>Item</code> field, select a quantity
+			in the <code>Quantity</code> field and click the <code>Add Item</code> button. Click on a row in the list in order to
+			mark the item present in the cart.
+		</p>
+
+		<!-- row for user input and button to add items -->
+		<form class="form-inline" id="input-div">
+			<!-- item column -->
+			<div class="form-group" id="items-div">
+				<label for="item">Item:</label>
+				<input type="text" class="form-control" id="item"></input>
+			</div>
+			<!-- quantity column -->
+			<div class="form-group" id="quantities-div">
+				<label for="qty">Quantity:</label>
+				<select name="quantity" id="qty" class="form-control">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">wtf</option>
+				</select>
+			</div>&nbsp;
+			<!-- Add item button column -->
+			<div class="form-group" id="btn-div">
+				<input type="button" id="add-btn" class="btn btn-primary btn-block" value="Add Item" onclick="printQuantity()"></input>
+			</div>
+
+
+		</form>
+
+		<h2>The List</h2>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th>Quantity</th>
+					<th>In cart?</th>
+				</tr>
+			</thead>
+			<tbody id="table-rows">
+				<tr>
+					<td>Gallon of Milk</td>
+					<td>1</td>
+					<td>No</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+	</div>
+
+
+	<!-- jQuery import -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- bootstrap js import -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- other script imports -->
+	<script src="scripts.js"></script>
+</body>
+
+</html>
