@@ -18,16 +18,16 @@
 		<h1>Simple Grocery List</h1>
 		<p>
 			<strong>Instructions: </strong>Add items to the list by typing in an item in the <code>Item</code> field, select a quantity
-			in the <code>Quantity</code> field and click the <code>Add Item</code> button. Click on a row in the list in order to
-			mark the item present in the cart.
+			in the <code>Quantity</code> field and click the <code>Add Item</code> button; optionally press the <kbd>Enter</kbd> key.
+			Click on a row in the list in order to mark the item present in the cart.
 		</p>
 
 		<!-- row for user input and button to add items -->
-		<form class="form-inline" id="input-div">
+		<form onsubmit="test()" class="form-inline" id="input-div">
 			<!-- item column -->
 			<div class="form-group" id="items-div">
 				<label for="item">Item:</label>
-				<input type="text" class="form-control" id="item"></input>
+				<input autofocus type="text" class="form-control" id="item"></input>
 			</div>
 			<!-- quantity column -->
 			<div class="form-group" id="quantities-div">
@@ -42,7 +42,7 @@
 					<option value="7">7</option>
 					<option value="8">8</option>
 					<option value="9">9</option>
-					<option value="10">wtf</option>
+					<option value="10">10</option>
 				</select>
 			</div>&nbsp;
 			<!-- Add item button column -->
