@@ -1,5 +1,12 @@
 /* my styles */
 
+/* item row colors */
+tr[incart*="No"] {
+	color: red;
+}
+tr[incart*="Yes"] {
+	color: green;
+}
 
 /*#btn-div{
 	position: relative;
