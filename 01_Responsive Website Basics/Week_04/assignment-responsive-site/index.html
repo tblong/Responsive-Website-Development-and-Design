@@ -18,8 +18,8 @@
 		<h1>Simple Grocery List</h1>
 		<p>
 			<strong>Instructions: </strong>Add items to the list by typing in an item in the <code>Item</code> field, select a quantity
-			in the <code>Quantity</code> field and click the <code>Add Item</code> button. Click on a row in the list in order to
-			mark the item present in the cart.
+			in the <code>Quantity</code> field and click the <code>Add Item</code> button; optionally press the <kbd>Enter</kbd> key.
+			Click on a row in the list in order to toggle the item's presence in the cart. Click on the <code>Remove Items</code>			button to clear the list.
 		</p>
 
 		<!-- row for user input and button to add items -->
@@ -44,17 +44,18 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-			</div>&nbsp;
+			</div>
 			<!-- Add item button column -->
 			<div class="form-group" id="btn-div">
 				<input type="button" id="add-btn" class="btn btn-primary btn-block" value="Add Item" onclick="submitForm(this.form)"></input>
 			</div>
-
-
+			<!-- remove all items column-->
+			<div class="form-group" id="rem-btn-div">
+				<input type="button" id="rem-btn" class="btn btn-danger btn-block" value="Remove Items" onclick="removeItems()"></input>
+			</div>
 		</form>
 
 		<h2>The List</h2>
-
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -65,26 +66,18 @@
 			</thead>
 			<tbody id="table-rows">
 				<tr onclick="rowHandler(this)" incart='Yes'>
-					<td>Gallon of Milk</td>
+					<td>gallon of milk</td>
 					<td>1</td>
-					<td>Yes</td>
+					<td>Yes&nbsp;<img src="images/cart.png" class="image-responsive" width="16px" alt=""></td>
 				</tr>
 				<tr onclick="rowHandler(this)" incart='No'>
-					<td>box-o-chez</td>
+					<td>box-o-wine</td>
 					<td>3</td>
 					<td>No</td>
 				</tr>
 			</tbody>
 		</table>
-
-
-
-
-
-
-
 	</div>
-
 
 	<!-- jQuery import -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

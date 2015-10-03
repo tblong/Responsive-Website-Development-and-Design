@@ -2,38 +2,19 @@
 
 /* item row colors */
 tr[incart*="No"] {
-	color: red;
+	color: #d9534f;
 }
 tr[incart*="Yes"] {
-	color: green;
+	color: #009A00;
 }
 
-/*#btn-div{
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-}*/
-/*#btn-div{
-	vertical-align: bottom;
-}*/
-
-/*#btn-div {
-	border: 1px solid red;
-}*/
-/*#input-div
-{
-	border: 1px solid red;
-	vertical-align: bottom;
-}*/
-/*button {
-	vertical-align: middle;
-	padding-top: 50px;
+kbd {
+	background-color: #E9EBFF;
+	color: rgb(59, 80, 243);
 }
-input[type=button]{
-	display: inline;
-	vertical-align: middle;
-}*/
 
-/*.col-md-2{
-	vertical-align: text-bottom;
-}*/
+code {
+	background-color: #E9EBFF;
+	color: rgb(59, 80, 243);
+}
+
