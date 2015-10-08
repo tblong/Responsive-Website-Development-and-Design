@@ -1,0 +1,13 @@
+/* basic styles for this example */
+h1{
+	color: gray;
+	border: 1px dashed lightgray;
+	text-align: center;
+}
+/* media query */
+@media (min-width: 500px){
+	/* make h1 tags red if width >= 500px */
+	h1{
+		color: red;
+	}
+}

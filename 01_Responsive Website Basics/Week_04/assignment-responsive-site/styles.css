@@ -1,0 +1,20 @@
+/* my styles */
+
+/* item row colors */
+tr[incart*="No"] {
+	color: #d9534f;
+}
+tr[incart*="Yes"] {
+	color: #009A00;
+}
+
+kbd {
+	background-color: #E9EBFF;
+	color: rgb(59, 80, 243);
+}
+
+code {
+	background-color: #E9EBFF;
+	color: rgb(59, 80, 243);
+}
+

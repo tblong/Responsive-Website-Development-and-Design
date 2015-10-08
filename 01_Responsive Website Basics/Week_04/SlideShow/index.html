@@ -1,0 +1,144 @@
+<html>
+
+<head>
+	<title>Image Gallery</title>
+
+	<!-- import bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- import our own stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+	<!-- import jQuery -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+	<!-- some header info (from Matthew's code) -->
+	<a href="index.html">Home</a> &nbsp;
+	<a href="aboutme.html">About me</a> &nbsp;
+	<a href="contact.html" class="greenlink">Contact me</a>
+
+	<hr></hr>
+	<div class="container">
+
+		<h1>Image Gallery</h1>
+
+		<!--
+		   These are the thumbnail images.
+		   They pretty much the same as the 
+		   last example from the previous
+		   module, except I have added an
+		   id to each image which includes
+		   the number of that image.
+		-->
+		<div class="row">
+			<div class="col-md-3">
+				<img id="image1" class="crop-img" src="img_1.jpg" alt="graffittied building" />
+			</div>
+			<div class="col-md-3">
+				<img id="image2" class="crop-img" src="img_3.jpg" alt="display of cheese" />
+			</div>
+			<div class="col-md-3">
+				<img id="image3" class="crop-img" src="img_4.jpg" alt="synethesizer workshop" />
+			</div>
+			<div class="col-md-3">
+				<img id="image4" class="crop-img" src="img_5.jpg" alt="City night" />
+			</div>
+		</div>
+		<!--
+			this is the large image which is
+			on a row of its own. 
+			The code is similar to the last example
+			of the previous module, but I have
+			added a backwards and forwards button
+		-->
+		<div class="row">
+			<div class="col-md-1">
+				<button id="backward">&lt;</button>
+			</div>
+			<div class="col-md-10">
+				<img id="bigImage" class="large-img" src="img_1.jpg" alt="graffittied building" />
+			</div>
+			<div class="col-md-1">
+				<button id="forward">&gt;</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// whether the slideshow is paused or not
+		var paused = false;
+
+		// when you click on a thumbnail
+		// it sets the src of the big image
+		// to be the same as the image
+		// you clicked on
+		$(".crop-img").click(function(){
+			$("#bigImage").attr('src', 
+				$(this).attr('src'));
+		});
+
+		// the counter variable that keeps
+		// track of which image you are showing
+		var counter = 1;
+		// virtually click on the current
+		// image to load it into the big image
+		$("#image"+counter).click();
+
+		// when you click on the backwards
+		// button select the previous image
+		$("#backward").click(function (){
+			// go back one in the counter
+			counter = counter - 1;
+			// if we are below 1 (the first
+			// image) loop round to 4 (the
+			// last image)
+			if(counter < 1){
+				counter = 4;
+			}
+			// virtually click on the current
+			// image to load it into the big image
+			$("#image"+counter).click();
+		});
+
+		// when you click on the forward
+		// button select the next image
+		$("#forward").click(function (){
+			// go forward one in the counter
+			counter = counter + 1;
+			// if we are above 4 (the last
+			// image) loop round to 1 (the
+			// first image)
+			if(counter > 4){
+				counter = 1;
+			}
+			// virtually click on the current
+			// image to load it into the big image
+			$("#image"+counter).click();
+		});
+
+		// when you click the big image 
+		// toggle pausing. Set paused to 
+		// not paused, i.e. if it is paused
+		// set it to not paused, if it is 
+		// not paused set it to paused
+		$("#bigImage").click(function (){
+			paused = !paused;
+		});
+
+		// set interval makes it move 
+		// forward every 3 second
+		setInterval(function (){
+			// first check if it is paused
+			if(!paused){
+				// virtual click the forward
+				// button
+				$("#forward").click();
+			}
+		}, 3000);
+	</script>
+
+</body>
+
+</html>

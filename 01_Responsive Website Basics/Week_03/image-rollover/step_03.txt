@@ -1,0 +1,1 @@
+$(this).attr('src', 'image01.jpg');

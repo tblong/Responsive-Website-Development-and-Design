@@ -1,0 +1,15 @@
+== 2015-09-20 ==
+- <link> element's "rel" attribute stands for relationship
+- use the <link> tag to include CSS docs
+- graceful degradation in CSS:
+	h1{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+- 	".indent" in CSS is used as class="indent" in HTML
+- CSS classes can style any tag in HTML
+- to learn the basics of responsiveness, we will use CSS and media queries to accomplish responsive behaviour
+- bootstrap uses a grid system of 12 columns
+- using bootstrap, everything is wrapped in div tags
+- 
+
+

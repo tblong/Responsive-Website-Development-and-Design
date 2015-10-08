@@ -1,0 +1,7 @@
+== 2015-09-19 ==
+- html: page structure
+- css: page style and appearance
+- JS: interactivity
+- will learn how to use bootstrap library
+
+

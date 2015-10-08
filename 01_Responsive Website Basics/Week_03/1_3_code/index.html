@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Simple JS Interactivity</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+	<!-- basic JS -->
+	<h1 id="h1" onclick="alert('hello');">Hello</h1>
+	<h1 id="h2" onclick="console.log('hello');">Console log</h1>
+
+	<!-- jQuery header tags -->
+	<h1 id="h3" onclick="$('#h3').html('I\'ve been clicked');">Hello jQuery</h1>
+	<h1 id="title" onclick="toggle();">jQuery test</h1>
+
+	<!-- scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" /></script>
+	<script type="text/javascript">
+		function toggle(){
+			$('#title').html('Changed!');
+			$('#title').click(function(){
+				$('#title').html('jQuery test');
+				$('#title').off('click');
+			});
+		}
+	</script>
+</body>
+
+</html>

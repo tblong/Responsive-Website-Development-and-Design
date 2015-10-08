@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Rollover Counter</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<h1 id="number" onclick="increment()"></h1>
+
+	<!-- import jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- other scripts -->
+	<script type="text/javascript">
+		var count = 0;
+		$('#number').text(count);
+		
+		function increment() {
+			count++;
+			count = count % 4;
+			$('#number').text(count);
+		}
+	</script>
+</body>
+
+</html>
