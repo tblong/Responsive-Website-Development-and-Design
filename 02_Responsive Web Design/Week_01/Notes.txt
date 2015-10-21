@@ -1,0 +1,11 @@
+== 2015-10-21 ==
+- usability: defines how efficient, memorable and learnable a site is
+- User experience (UX): subjective but how the user feels about a site
+- navigation:
+	- site maps
+	- breadcrumbs
+	- relative vs absolute links
+	- where am i, where can i go, what is here
+	- 
+
+
