@@ -6,6 +6,30 @@
 	- breadcrumbs
 	- relative vs absolute links
 	- where am i, where can i go, what is here
-	- 
 
-
+== 2015-10-24 ==
+- Edward Tufte cognition and evidence-based design
+	- how to make information clear
+- user-centric design approaches
+	- Who are our users?
+	- What do they want?
+	- How do they get the info?
+- UX is primary and must come before any code is written
+- UX must be consistent across all areas of a site
+- judgement of good design can be had by how long it takes to understand what it is about
+- Give a readable sign post for what the info is for
+- obfuscation vs. simplicity
+	- the worst designs are those that look like corporate reports
+	- simplicity is always better
+		- What is it?
+			- a news item, product or download
+		- where can i get it?
+			- minimum number of clicks to get the content
+		- why is this here?
+			- remove if not helping the previous two
+		- color: only use if you can think of a good reason
+- bootstrap
+	- great for keeping things simple and effective, working on all screens
+	- but also possibly boring?
+- http://darkpatterns.org/
+	- UX designs meant to trick the user
