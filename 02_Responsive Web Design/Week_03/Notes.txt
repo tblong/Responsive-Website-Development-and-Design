@@ -1,0 +1,9 @@
+== 2015-11-08 ==
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+- separating page structure and content
+- http://handlebarsjs.com/
+- reviewed using JS objects to store page content
+- handlebars templates
+	- the templates exist inside <script>
+	- uses {{name}} syntax to define an expression
+- jQuery 'on' function for attaching an event handler function
