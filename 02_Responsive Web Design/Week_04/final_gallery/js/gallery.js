@@ -14,29 +14,29 @@ var current_photo = current_album.photos[0];
 
 // a helper function that instantiates a template
 // and displays the results in the content div
-function showTemplate(template, data){
-	var html    = template(data);
+function showTemplate(template, data) {
+	var html = template(data);
 	$('#content').html(html);
 }
 
 // document read gets called when the whole document
 // is loaded, so we put most of the code that needs to run
 // in here
-$(document).ready(function(){
+$(document).ready(function () {
 
 	//
 	// compile all of our templates ready for use
 	//
-	var source   = $("#albums-template").html();
+	var source = $("#albums-template").html();
 	albums_template = Handlebars.compile(source);
-	
-	source   = $("#photos-template").html();
+
+	source = $("#photos-template").html();
 	photos_template = Handlebars.compile(source);
-	
-	source   = $("#photo-template").html();
+
+	source = $("#photo-template").html();
 	photo_template = Handlebars.compile(source);
-	
-	source   = $("#slideshow-template").html();
+
+	source = $("#slideshow-template").html();
 	slideshow_template = Handlebars.compile(source);
 
 	// 
@@ -62,7 +62,7 @@ $(document).ready(function(){
 		// pretty much the same as the photos tab
 		// function so we could acutally just
 		// call $(".photo-thumbnail").click() ) 
-		$(".album-thumbnail").click(function (){
+		$(".album-thumbnail").click(function () {
 			
 			// get the index (position in the array)
 			// of the album we clicked on
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 			// add an on click al all the photo thumbnails
 			// which displays the photo in a modal popup
-			$(".photo-thumbnail").click(function (){
+			$(".photo-thumbnail").click(function () {
 				// get the index (position in the array)
 				// of the photo we clicked on
 				// "this" is the element that was clicked on
@@ -115,7 +115,7 @@ $(document).ready(function(){
 
 		// add an on click al all the photo thumbnails
 		// which displays the photo in a modal popup
-		$(".photo-thumbnail").click(function (){
+		$(".photo-thumbnail").click(function () {
 			// get the index (position in the array)
 			// of the photo we clicked on
 			// "this" is the element that was clicked on
