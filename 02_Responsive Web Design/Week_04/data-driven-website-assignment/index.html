@@ -1,23 +1,69 @@
 <!-- This is a first example of using a template -->
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <title>Data Driven Site</title>
 
-<!-- include our libraries and css files -->
+    <!-- include our libraries and css files -->
 
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/handlebars-v3.0.3.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
 
-<script src="js/bootstrap.min.js"></script>
-<script src="AnimalsData.js"></script>
-<script src="assignment.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="AnimalsData.js"></script>
+    <script src="assignment.js"></script>
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="assignment.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="assignment.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- put your HTML here -->
+    <!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+            <!-- nav header -->
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">Animals</a>
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- / nav header-->
+
+            <!-- collapsible nav -->
+            <div class="navbar-collapse collapse" id="navbar-main" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="themes" aria-expanded="false">Categories&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="themes">
+                            <!--TODO: link handling, can this be dynamic? -->
+                            <li><a href="#">Reptiles</a></li>
+                            <li><a href="#">Mammals</a></li>
+                            <li><a href="#">Birds</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- / collapsible nav-->
+
+
+
+        </div>
+    </nav>
+    <!-- / navbar -->
+
+    <!-- TODO: try createing navbar template to dynamically build categories based on data -->
+
+
 
 </body>
+
+</html>
