@@ -1,20 +1,9 @@
-<!-- This is a first example of using a template -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Data Driven Site</title>
-
-    <!-- include our libraries and css files -->
-
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/handlebars-v3.0.3.js"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="AnimalsData.js"></script>
-    <script src="assignment.js"></script>
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="assignment.css" rel="stylesheet">
@@ -62,21 +51,28 @@
         <!-- view menu nav-->
         <div id="view-menu">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#" id="categories-tab">Categories</a></li>
-                <li><a href="#" id="current-category-tab">Current Category</a></li>
-                <li><a href="#" id="current-animal-tab">Current Animal</a></li>
+                <li class="menu active" id="categories-tab"><a href="#">Categories</a></li>
+                <li class="menu" id="current-category-tab"><a href="#">Current Category</a></li>
+                <li class="menu" id="current-animal-tab"><a href="#">Current Animal</a></li>
             </ul>
         </div>
         <!-- / view menu nav-->
 
         <!-- main content: generated via template -->
-        <div id="content" class="container-fluid" role="main">
+        <div id="content" class="container" role="main">
 
         </div>
         <!-- / main content -->
 
     </div>
     <!-- / main container -->
+
+
+    <!-- 
+        =======================
+        Templates section
+        =======================
+    -->
 
     <!-- nav category template -->
     <script id="nav-cat-template" type="text/x-handlebars-template">
@@ -85,7 +81,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="themes" aria-expanded="false">Categories&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="themes">
                     {{#each category}}
-                    <li><a href="#">{{name}}</a></li>
+                    <li><a href="#" data-id="{{@index}}">{{name}}</a></li>
                     {{/each}}
                 </ul>
             </li>
@@ -95,6 +91,12 @@
 
     <!-- category template -->
     <script id="category-template" type="text/x-handlebars-template">
+        <!-- header for category -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{{category.length}} Animal Categories</h3>
+            </div>
+        </div>
         <div class="row">
             {{#each category}}
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -112,7 +114,41 @@
     </script>
     <!-- / category template -->
 
+    <!-- animals template TODO: display all animals in a specific category -->
+    <script id="animals-template" type="text/x-handlebars-template">
+        <!-- animals header -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{{name}} Category</h3>
+            </div>
+        </div>
+        <div class="row">
 
+        </div>
+
+    </script>
+    <!-- / animals template -->
+
+    <!-- single animal template TODO: display a single animal -->
+    <script id="animal-template" type="text/x-handlebars-template">
+
+
+    </script>
+    <!-- / single animal template -->
+
+
+    <!-- 
+        =======================
+        Script Imports
+        =======================
+    -->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="AnimalsData.js"></script>
+    <script src="assignment.js"></script>
 
 
 </body>
