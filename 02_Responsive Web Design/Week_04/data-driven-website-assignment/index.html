@@ -38,29 +38,80 @@
             </div>
             <!-- / nav header-->
 
-            <!-- collapsible nav -->
+            <!-- collapsible nav: generated via template -->
             <div class="navbar-collapse collapse" id="navbar-main" aria-expanded="false" style="height: 1px;">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="themes" aria-expanded="false">Categories&nbsp;<span class="caret"></span></a>
-                        <ul class="dropdown-menu" aria-labelledby="themes">
-                            <!--TODO: link handling, can this be dynamic? -->
-                            <li><a href="#">Reptiles</a></li>
-                            <li><a href="#">Mammals</a></li>
-                            <li><a href="#">Birds</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
             </div>
             <!-- / collapsible nav-->
-
-
 
         </div>
     </nav>
     <!-- / navbar -->
 
-    <!-- TODO: try createing navbar template to dynamically build categories based on data -->
+    <!-- main container -->
+    <div class="container">
+
+        <div class="page-header" id="banner">
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-sm-6">
+                    <h1>Animal Data</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- view menu nav-->
+        <div id="view-menu">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#" id="categories-tab">Categories</a></li>
+                <li><a href="#" id="current-category-tab">Current Category</a></li>
+                <li><a href="#" id="current-animal-tab">Current Animal</a></li>
+            </ul>
+        </div>
+        <!-- / view menu nav-->
+
+        <!-- main content: generated via template -->
+        <div id="content" class="container-fluid" role="main">
+
+        </div>
+        <!-- / main content -->
+
+    </div>
+    <!-- / main container -->
+
+    <!-- nav category template -->
+    <script id="nav-cat-template" type="text/x-handlebars-template">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="themes" aria-expanded="false">Categories&nbsp;<span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="themes">
+                    {{#each category}}
+                    <li><a href="#">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>
+    </script>
+    <!-- / nav category template -->
+
+    <!-- category template -->
+    <script id="category-template" type="text/x-handlebars-template">
+        <div class="row">
+            {{#each category}}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="category-thumb" data-id="{{@index}}">
+                    <a href="#"><img src="{{animals.[0].image1}}" alt="{{animals.[0].name}}" class="crop-img"></a>
+                    <div class="caption">
+                        <h4>{{name}}</h4>
+                        <p>{{animals.length}} animals</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </script>
+    <!-- / category template -->
+
 
 
 
