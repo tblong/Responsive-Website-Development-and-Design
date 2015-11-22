@@ -51,9 +51,9 @@
         <!-- view menu nav-->
         <div id="view-menu">
             <ul class="nav nav-tabs">
-                <li class="menu active" id="categories-tab"><a href="#">Categories</a></li>
-                <li class="menu" id="current-category-tab"><a href="#">Current Category</a></li>
-                <li class="menu" id="current-animal-tab"><a href="#">Current Animal</a></li>
+                <li class="menu active" id="categories-tab"><a href="#" class="nav-categories">Categories</a></li>
+                <li class="menu" id="current-category-tab"><a href="#" class="nav-current-category">Current Category</a></li>
+                <li class="menu" id="current-animal-tab"><a href="#" class="nav-current-animal">Current Animal</a></li>
             </ul>
         </div>
         <!-- / view menu nav-->
@@ -81,7 +81,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="themes" aria-expanded="false">Categories&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="themes">
                     {{#each category}}
-                    <li><a href="#" data-id="{{@index}}">{{name}}</a></li>
+                    <li><a href="#" class="nav-link" data-id="{{@index}}">{{name}}</a></li>
                     {{/each}}
                 </ul>
             </li>
@@ -91,21 +91,20 @@
 
     <!-- category template -->
     <script id="category-template" type="text/x-handlebars-template">
-        <!-- header for category -->
+        <!-- category header -->
         <div class="row">
             <div class="col-md-12">
                 <h3>{{category.length}} Animal Categories</h3>
             </div>
         </div>
+        <!-- content -->
         <div class="row">
             {{#each category}}
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="category-thumb" data-id="{{@index}}">
-                    <a href="#"><img src="{{animals.[0].image1}}" alt="{{animals.[0].name}}" class="crop-img"></a>
-                    <div class="caption">
-                        <h4>{{name}}</h4>
-                        <p>{{animals.length}} animals</p>
-                    </div>
+                <a href="#" class="category-thumb" data-id="{{@index}}"><img src="{{animals.[0].image1}}" alt="{{animals.[0].name}}" class="crop-img"></a>
+                <div class="caption">
+                    <h4>{{name}}</h4>
+                    <p>{{animals.length}} types</p>
                 </div>
             </div>
             {{/each}}
@@ -114,7 +113,7 @@
     </script>
     <!-- / category template -->
 
-    <!-- animals template TODO: display all animals in a specific category -->
+    <!-- animals template: display 'image1' and 'name' for all animals in a specific category -->
     <script id="animals-template" type="text/x-handlebars-template">
         <!-- animals header -->
         <div class="row">
@@ -122,16 +121,41 @@
                 <h3>{{name}} Category</h3>
             </div>
         </div>
+        <!-- content -->
         <div class="row">
-
+            {{#each animals}}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="#" class="animal-thumb" data-id="{{@index}}"><img src="{{image1}}" alt="{{name}}" class="crop-img"></a>
+                <div class="caption">
+                    <h4>{{name}}</h4>
+                </div>
+            </div>
+            {{/each}}
         </div>
-
     </script>
     <!-- / animals template -->
 
     <!-- single animal template TODO: display a single animal -->
     <script id="animal-template" type="text/x-handlebars-template">
-
+        <!-- animal header-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clearfix">
+                    <h4>Animal&nbsp;Name:&nbsp;{{name}}</h4>
+                    <img src="{{image1}}" alt="{{name}}" class="img-thumbnail" width="250px">
+                </div>
+            </div>
+        </div>
+        <!-- animal description -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clearfix">
+                    <h4>Description:</h4>
+                    <img src="{{image2}}" alt="{{name}}" class="img-thumbnail pull-right" width="250px">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
 
     </script>
     <!-- / single animal template -->
