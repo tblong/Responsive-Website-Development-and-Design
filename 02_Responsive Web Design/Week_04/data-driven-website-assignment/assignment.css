@@ -1,0 +1,13 @@
+/* put your css code here */
+
+.page-header {
+	margin: 60px 0 22px;
+}
+
+.crop-img {
+	max-height: 200px;
+}
+
+#view-menu {
+	margin: 22px;
+}
