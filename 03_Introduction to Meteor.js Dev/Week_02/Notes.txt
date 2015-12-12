@@ -1,2 +1,9 @@
 == 2015-12-11 ==
+- learning outcomes for this module:
+	- Create Mongo Collections
+	- Use Mongo find and insert operations
+	- Control a Bootstrap modal from Meteor
+	- Use third party Meteor packages to add functionality
+- http://docs.meteor.com/#/full/mongo_collection??
+- meteor handles pushing data from the local (client) db into the central db server side
 - 
