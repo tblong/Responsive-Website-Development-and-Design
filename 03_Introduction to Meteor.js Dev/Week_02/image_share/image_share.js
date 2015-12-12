@@ -17,7 +17,7 @@ if (Meteor.isClient) {
        // then remove it at the end of the animation
        $("#"+image_id).hide('slow', function(){
         Images.remove({"_id":image_id});
-       })  
+       })
     }, 
     'click .js-rate-image':function(event){
       var rating = $(event.currentTarget).data("userrating");
@@ -46,8 +46,8 @@ if (Meteor.isClient) {
         img_alt:img_alt, 
         createdOn:new Date()
       });
-       $("#image_add_form").modal('show');
-      return false;
+       $("#image_add_form").modal('hide');
+      return false;  // stops the default event
     }
   });
 
