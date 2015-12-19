@@ -1,0 +1,5 @@
+== 2015-12-18 ==
+- http://docs.meteor.com/#/full/meteor_user
+- 'currentUser' is a built-in template helper accessible in any template
+- http://docs.meteor.com/#/full/accounts_ui_config
+- 
