@@ -1,0 +1,5 @@
+== 2015-12-26 ==
+- reserved meteor folder names: public, client, server, private, tests, lib
+    - lib: things in this folder get loaded first
+- http://docs.meteor.com/#/full/allow
+- 
