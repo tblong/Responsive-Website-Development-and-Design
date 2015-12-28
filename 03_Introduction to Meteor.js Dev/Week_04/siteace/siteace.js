@@ -1,3 +1,4 @@
+/* global HTTP */
 /* global Comments */
 /* global Router */
 /* global Accounts */
@@ -9,6 +10,7 @@
 
 
 if (Meteor.isClient) {
+    
     // comments ui config
     Comments.ui.config({
         template: "bootstrap"
@@ -70,6 +72,7 @@ if (Meteor.isClient) {
         },
         prettyDate: function () {
             return this.createdOn.toLocaleString();
+            // return "testing";
         }
     });
 
@@ -151,18 +154,19 @@ if (Meteor.isClient) {
                 return;
             }
             var title = event.target.title.value;
-            // if (title == "") {
-            //     alert("Please enter a Title.");
-            //     return;
-            // }
+            if (title == "") {
+                alert("Please enter a Title.");
+                return;
+            }
             var description = event.target.description.value;
             if (description == "") {
                 alert("Please enter a Description.");
                 return;
             }
+            
 
             // update db
-            Websites.insert({
+            var siteId = Websites.insert({
                 url: url,
                 title: title,
                 description: description,
@@ -170,6 +174,23 @@ if (Meteor.isClient) {
                 addedBy: Meteor.userId(),
                 createdOn: new Date(),
             });
+            
+            // get url data from server, update p3p if present in header
+            Meteor.call("remoteGet", url, function (err, resp) {
+                // console.log(resp);
+                var p3p = resp.p3p;
+                if (p3p) {
+                    Websites.update({_id: siteId}, {
+                        $set: {
+                            p3p: p3p
+                        }
+                    });
+                }
+                
+            });
+            
+            // update site with title if not provided by the user
+            
             
             // blank out form inputs
             event.target.url.value = "";
@@ -182,6 +203,19 @@ if (Meteor.isClient) {
 
 
 if (Meteor.isServer) {
+    
+    // server methods
+    Meteor.methods({
+        "remoteGet": function (url) {
+            return HTTP.get(url).headers;
+            // var resp = HTTP.get(url);
+            // var html = $.parseHTML(resp.content);
+            // var description = $html.find("meta");
+            // console.log(resp);
+            // return resp;
+        }
+    });
+    
     // start up function that creates entries in the Websites databases.
     Meteor.startup(function () {
         // code to run on server at startup

@@ -96,6 +96,9 @@
             <li>Votes: {{votes}}</li>
             <li>Added by: {{getUserName}}</li>
             <li>Created on: {{prettyDate}}</li>
+            {{#if p3p}}
+                <li>P3P Header info: {{p3p}}</li>
+            {{/if}}
         </ul>
         <div class="comment-section">
             {{> commentsBox id=_id}}
