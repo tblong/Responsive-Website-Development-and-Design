@@ -1,3 +1,5 @@
+/* global Comments */
+/* global Router */
 /* global Accounts */
 /* global $ */
 /* global Mongo */
@@ -7,6 +9,44 @@
 
 
 if (Meteor.isClient) {
+    // comments ui config
+    Comments.ui.config({
+        template: "bootstrap"
+    });
+    
+    // router config
+    Router.configure({
+        layoutTemplate: "ApplicationLayout"
+    });
+    
+    // root route
+    Router.route("/", function () {
+        this.render("navbar", {
+            to: "navbar"
+        });
+        this.render("website_form", {
+            to: "siteform"
+        });
+        this.render("website_list", {
+            to: "main"
+        });
+    });
+    
+    // indivitual site routes
+    Router.route("website/:_id", function () {
+        this.render("navbar", {
+            to: "navbar"
+        });
+        this.render("site_detail", {
+            to: "main",
+            data: function () {
+                return Websites.findOne({ _id: this.params._id });
+            }
+        });
+    });
+    
+    
+    
     
     // accounts config
     Accounts.ui.config({
@@ -16,6 +56,22 @@ if (Meteor.isClient) {
     /////
     // template helpers 
     /////
+    
+    // site detail helpers
+    Template.site_detail.helpers({
+        getUserName: function () {
+            var user = Meteor.users.findOne({ _id: this.addedBy });
+            if (user) {
+                return user.username
+            }
+            else {
+                return "anon";
+            }
+        },
+        prettyDate: function () {
+            return this.createdOn.toLocaleString();
+        }
+    });
 
     // helper function that returns all available websites
     Template.website_list.helpers({

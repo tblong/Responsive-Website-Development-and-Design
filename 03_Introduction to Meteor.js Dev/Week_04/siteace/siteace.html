@@ -3,10 +3,21 @@
 </head>
 
 <body>
+
+</body>
+
+<!-- app layout template -->
+<template name="ApplicationLayout">
+    {{> yield "navbar"}} {{> yield "siteform"}} {{> yield "main"}}
+</template>
+
+<!-- nav template -->
+<template name="navbar">
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Site Ace</a>
+                <a class="navbar-brand" href="/">Site Ace</a>
             </div>
             <div class="navbar-left">
                 {{> loginButtons}}
@@ -14,47 +25,49 @@
         </div>
     </nav>
 
-    <div class="container">
-        {{> website_form}} {{> website_list}}
-    </div>
-</body>
+</template>
 
-
+<!-- add site template -->
 <template name="website_form">
-    <a class="btn btn-default js-toggle-website-form" href="#">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    </a>
-    <div id="website_form" class="hidden_div">
-        <form class="js-save-website-form">
-            <div class="form-group">
-                <label for="url">Site address</label>
-                <input type="text" class="form-control" id="url" placeholder="http://www.mysite.com">
-            </div>
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Mysite">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ...">
-            </div>
+    <div class="container">
+        <a class="btn btn-default js-toggle-website-form" href="#">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </a>
+        <div id="website_form" class="hidden_div">
+            <form class="js-save-website-form">
+                <div class="form-group">
+                    <label for="url">Site address</label>
+                    <input type="text" class="form-control" id="url" placeholder="http://www.mysite.com">
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Mysite">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ...">
+                </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
     </div>
+
 </template>
 
 <!-- template that displays several website items -->
 <template name="website_list">
-    <ol>
-        {{#each websites}} {{>website_item}} {{/each}}
-    </ol>
+    <div class="container">
+        <ol>
+            {{#each websites}} {{>website_item}} {{/each}}
+        </ol>
+    </div>
 </template>
 
 <!-- template that displays individual website entries -->
 <template name="website_item">
     <li>
-        <a href="{{url}}">{{title}}</a>
+        <a href="/website/{{_id}}">{{title}}</a>
         <p>
             {{description}}
         </p>
@@ -71,4 +84,22 @@
             <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
         </a>
     </li>
+</template>
+
+<!-- site detail template -->
+<template name="site_detail">
+    <div class="container">
+        <h1>{{title}}</h1>
+        <ul>
+            <li>URL: <a href="{{url}}">{{url}}</a></li>
+            <li>Description: {{description}}</li>
+            <li>Votes: {{votes}}</li>
+            <li>Added by: {{getUserName}}</li>
+            <li>Created on: {{prettyDate}}</li>
+        </ul>
+        <div class="comment-section">
+            {{> commentsBox id=_id}}
+        </div>
+    </div>
+
 </template>
