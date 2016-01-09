@@ -1,0 +1,3 @@
+== 2016-01-09 ==
+- reviewing reactive objects in meteor and when to use each
+- 
