@@ -1,0 +1,12 @@
+== 2015-12-18 ==
+- http://docs.meteor.com/#/full/meteor_user
+- 'currentUser' is a built-in template helper accessible in any template
+- http://docs.meteor.com/#/full/accounts_ui_config
+
+== 2015-12-20 ==
+- https://docs.mongodb.org/manual/reference/method/db.collection.find/
+- http://docs.meteor.com/#/full/session
+- https://atmospherejs.com/meteor/underscore
+- http://underscorejs.org/
+- http://richsilv.github.io/meteor/meteor-reactive-data-types/
+- 

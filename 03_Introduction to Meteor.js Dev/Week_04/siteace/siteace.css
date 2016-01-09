@@ -1,0 +1,13 @@
+/* CSS declarations go here */
+.hidden_div{
+	display:none;
+}
+
+#login-buttons {
+  padding-top: 18px;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,12 @@
+== 2015-12-05 ==
+- https://www.meteor.com/install
+- https://www.meteor.com/tutorials/blaze/creating-an-app
+- added '%localappdata%\.meteor' to path variable
+- had to run 'meteor update' to 'image_share' project provided
+- http://docs.meteor.com/#/full/templates_api??
+- meteor packages: https://atmospherejs.com/
+- meteor CLI
+	- 'meteor search twbs'
+	- 'meteor show twbs:bootstrap'
+	- 'meteor add twbs:bootstrap'
+	- 'meteor create myProjectName'

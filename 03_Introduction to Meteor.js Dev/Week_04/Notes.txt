@@ -1,0 +1,8 @@
+== 2015-12-26 ==
+- reserved meteor folder names: public, client, server, private, tests, lib
+    - lib: things in this folder get loaded first
+- http://docs.meteor.com/#/full/allow
+- https://github.com/iron-meteor/iron-router
+- iron router:
+    - {{> yield "navbar"}}: yield is not a template here, but rather a place holder for iron router
+    - 
