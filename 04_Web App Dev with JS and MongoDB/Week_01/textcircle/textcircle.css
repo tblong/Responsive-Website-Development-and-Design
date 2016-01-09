@@ -1,1 +1,11 @@
 /* CSS declarations go here */
+
+body {
+    padding-top: 60px;
+}
+
+iframe#viewer_iframe {
+    position: absolute;
+    width: 100%;
+    min-height: 400px;
+}
