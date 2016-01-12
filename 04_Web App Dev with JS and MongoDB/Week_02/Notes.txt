@@ -1,0 +1,7 @@
+== 2016-01-12 ==
+- mongo db commands
+    - show collections
+    - db.<collectionName>.findOne()
+    - db.<collectionName>.find().count()
+    - db.<collectionName>.find().pretty()
+    - 

@@ -1,0 +1,56 @@
+<head>
+    <title>textcircle</title>
+</head>
+
+<body>
+    <!-- main nav -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- nav header -->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">TextCircle</a>
+
+            </div>
+            <!-- / nav header -->
+
+            <div class="navbar-text navbar-right">
+                {{> loginButtons}}
+            </div>
+
+
+        </div>
+    </nav>
+    <!-- / main nav-->
+
+    <div class="container">
+
+        <!-- 2 column grid -->
+        <div class="row">
+            <div class="col-md-6">
+                {{> editor}}
+            </div>
+            <div class="col-md-6">
+                {{> viewer}}
+            </div>
+        </div>
+
+    </div>
+
+    <!--{{> date_display}}-->
+
+</body>
+
+<!-- date display template -->
+<!--<template name="date_display">
+    {{current_date}}
+</template>-->
+
+<!-- viewer template -->
+<template name="viewer">
+    <iframe id="viewer_iframe" frameborder="0"></iframe>
+</template>
+
+<!-- editor template -->
+<template name="editor">
+    {{> sharejsCM docid=docid onRender=config id="editor"}}
+</template>
