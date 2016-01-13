@@ -21,4 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 mizzao:sharejs-codemirror
 twbs:bootstrap
 accounts-password
-accounts-ui
+ian:accounts-ui-bootstrap-3
