@@ -25,6 +25,13 @@
 
     <div class="container">
 
+        <!-- editing users -->
+        <div class="row">
+            <div class="col-md-12" id="editors_list">
+                {{> editingUsers}}
+            </div>
+        </div>
+
         <!-- 2 column grid -->
         <div class="row">
             <div class="col-md-6">
@@ -45,6 +52,14 @@
 <!--<template name="date_display">
     {{current_date}}
 </template>-->
+
+<!-- editing users template -->
+<template name="editingUsers">
+    Editors: 
+    {{#each users}}
+        <span class="label label-info">{{firstname}}</span> 
+    {{/each}}
+</template>
 
 <!-- viewer template -->
 <template name="viewer">
