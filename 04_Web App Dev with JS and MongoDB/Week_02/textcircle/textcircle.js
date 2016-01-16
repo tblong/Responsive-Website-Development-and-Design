@@ -1,3 +1,4 @@
+/* global EditingUsers */
 /* global $ */
 /* global Session */
 /* global Mongo */
@@ -5,6 +6,7 @@
 /* global Template */
 /* global Meteor */
 this.Documents = new Mongo.Collection("documents");
+EditingUsers = new Mongo.Collection("editingUsers");
 
 if (Meteor.isClient) {
 
@@ -26,9 +28,16 @@ if (Meteor.isClient) {
     Template.editor.helpers({
         config: function () {
             return function (editor) {
+                editor.setOption("lineNumbers", true);
+                editor.setOption("mode", "html");
+                editor.setOption("theme", "cobalt");
+                // editor.setOption("keyMap", "sublime");
+                // editor.setTheme("codemirror/theme/cobalt");
+                
                 editor.on("change", function (cm_editor, info) {
                     // console.log(cm_editor.getValue());
                     $("#viewer_iframe").contents().find("html").html(cm_editor.getValue());
+                    Meteor.call("addEditingUser");
                 });
             }
         },
@@ -56,3 +65,31 @@ if (Meteor.isServer) {
         }
     });
 }
+
+Meteor.methods({
+    addEditingUser: function () {
+        var doc, userProfile, eusers;
+        doc = Documents.findOne();
+
+        if (!doc) { return; } // no doc found
+        if (!this.userId) { return; } // no user found
+        
+        // we have a doc and a user now
+        userProfile = Meteor.user().profile;
+        eusers = EditingUsers.findOne({ docid: doc._id });
+
+        if (!eusers) {
+            eusers = {
+                docid: doc._id,
+                users: {}
+            };
+        }
+
+        userProfile.lastEdit = new Date();
+        eusers.users[this.userId] = userProfile;
+
+        EditingUsers.upsert({ _id: eusers._id }, eusers);
+
+
+    }
+});

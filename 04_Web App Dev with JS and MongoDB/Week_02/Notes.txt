@@ -5,6 +5,8 @@
     - db.<collectionName>.find().count()
     - db.<collectionName>.find().pretty()
 
-== 2016-01-13 ==
-- 
+== 2016-01-16 ==
+- more mongo db commands
+    - db.<collectionName>.remove({}): removes all entries from collection
+    - 
     
