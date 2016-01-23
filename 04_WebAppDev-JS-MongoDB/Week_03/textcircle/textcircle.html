@@ -4,23 +4,8 @@
 
 <body>
     <!-- main nav -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- nav header -->
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand">TextCircle</a>
+    {{> navbar}}
 
-            </div>
-            <!-- / nav header -->
-
-            <!-- login buttons -->
-            <ul class="nav navbar-nav navbar-right">
-                {{> loginButtons}}
-            </ul>
-
-
-        </div>
-    </nav>
     <!-- / main nav-->
 
     <div class="container">
@@ -53,12 +38,33 @@
     {{current_date}}
 </template>-->
 
+<!-- navbar template -->
+<template name="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- nav header -->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">TextCircle</a>
+
+            </div>
+            <!-- / nav header -->
+
+            <ul class="nav navbar-nav">
+                <li><span class="glyphicon glyphicon-plus"></span></li>
+            </ul>
+
+            <!-- login buttons -->
+            <ul class="nav navbar-nav navbar-right">
+                {{> loginButtons}}
+            </ul>
+        </div>
+    </nav>
+</template>
+
 <!-- editing users template -->
 <template name="editingUsers">
-    Editors: 
-    {{#each users}}
-        <span class="label label-info">{{firstname}}</span> 
-    {{/each}}
+    Editors: {{#each users}}
+    <span class="label label-info">{{firstname}}</span> {{/each}}
 </template>
 
 <!-- viewer template -->
