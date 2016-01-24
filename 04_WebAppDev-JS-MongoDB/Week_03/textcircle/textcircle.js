@@ -76,12 +76,38 @@ if (Meteor.isClient) {
             // return undefined;
         }
     });
+
+    Template.navbar.helpers({
+        documents: function () {
+            return Documents.find({});
+        }
+    });
+
+    Template.docMeta.helpers({
+        document: function () {
+            return Documents.findOne({ _id: Session.get("docid") });
+        }
+    });
+
+    Template.editableText.helpers({
+        userCanEdit: function (doc, Collection) {
+            var doc = Documents.findOne({ _id: Session.get("docid"), owner: Meteor.userId() });
+            if (doc) {
+                return true;
+            }
+
+            return false;
+        }
+    });
     
     ////////
     // Events
     ////////
     
     Template.navbar.events({
+        "click .js-load-doc": function (event) {
+            Session.set("docid", this._id);
+        },
         "click .js-add-doc": function (event) {
             event.preventDefault();
             
@@ -91,7 +117,11 @@ if (Meteor.isClient) {
                 return;
             }
 
-            Meteor.call("addDoc");
+            Meteor.call("addDoc", function (error, result) {
+                if (!error) {
+                    Session.set("docid", result);
+                }
+            });
         }
     });
 }
@@ -123,7 +153,8 @@ Meteor.methods({
             title: "my new doc"
         };
 
-        Documents.insert(doc);
+        var id = Documents.insert(doc);
+        return id;
 
     },
     addEditingUser: function () {
