@@ -10,6 +10,9 @@ EditingUsers = new Mongo.Collection("editingUsers");
 
 if (Meteor.isClient) {
 
+    Meteor.subscribe("documents");
+    Meteor.subscribe("editingUsers");
+
     // Session.set("current_date", new Date());
     
     // update current_date session key
@@ -79,11 +82,23 @@ if (Meteor.isClient) {
 
     Template.navbar.helpers({
         documents: function () {
-            return Documents.find({});
+            return Documents.find();
         }
     });
 
     Template.docMeta.helpers({
+        canEdit: function () {
+            var doc;
+            doc = Documents.findOne({ _id: Session.get("docid") });
+            if (doc) {
+                if (doc.owner == Meteor.userId()) {
+                    return true;
+                }
+            }
+
+            return false;
+
+        },
         document: function () {
             return Documents.findOne({ _id: Session.get("docid") });
         }
@@ -104,6 +119,18 @@ if (Meteor.isClient) {
     // Events
     ////////
     
+    Template.docMeta.events({
+        "click .js-tog-private": function (event) {
+            console.log(event.target.checked);
+            var doc = {
+                _id: Session.get("docid"),
+                isPrivate: event.target.checked
+            };
+
+            Meteor.call("updateDocPrivacy", doc);
+        }
+    });
+
     Template.navbar.events({
         "click .js-load-doc": function (event) {
             Session.set("docid", this._id);
@@ -136,9 +163,32 @@ if (Meteor.isServer) {
             });
         }
     });
+
+    Meteor.publish("documents", function () {
+        return Documents.find({
+            $or: [
+                { isPrivate: false },
+                { owner: this.userId }
+            ]
+        });
+    });
+
+    Meteor.publish("editingUsers", function () {
+        return EditingUsers.find({});
+    });
 }
 
 Meteor.methods({
+    updateDocPrivacy: function (doc) {
+        // console.log(doc);
+        var realDoc = Documents.findOne({ _id: doc._id, owner: this.userId });
+
+        if (realDoc) {
+            realDoc.isPrivate = doc.isPrivate;
+            Documents.update({ _id: doc._id }, realDoc);
+        }
+
+    },
     addDoc: function () {
         var doc;
         
