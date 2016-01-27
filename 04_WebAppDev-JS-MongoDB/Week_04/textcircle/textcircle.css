@@ -1,0 +1,22 @@
+/* CSS declarations go here */
+
+body {
+    padding-top: 60px;
+}
+
+iframe#viewer_iframe {
+    border: 1px solid gray;
+    position: absolute;
+    width: 100%;
+    min-height: 300px;
+    resize: vertical;
+}
+
+#editors_list {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/*#login-dropdown-list {
+    position: absolute;
+    min-height: 200px;
+}*/
