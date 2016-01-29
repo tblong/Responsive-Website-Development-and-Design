@@ -1,21 +1,8 @@
-<head>
-    <title>textcircle</title>
-</head>
+<template name="ApplicationLayout">
 
-<body>
-    <!-- main nav -->
-    {{> navbar}}
+    <head>
+        <title>textcircle</title>
+    </head>
+    {{> yield "header"}} {{> yield "main"}}
 
-    <!-- / main nav-->
-
-
-
-    <!--{{> date_display}}-->
-
-</body>
-
-<!-- date display template -->
-<!--<template name="date_display">
-    {{current_date}}
-</template>-->
-
+</template>

@@ -16,6 +16,11 @@ iframe#viewer_iframe {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.top-margin{
+	margin-top:20px;
+}
+
 /*#login-dropdown-list {
     position: absolute;
     min-height: 200px;

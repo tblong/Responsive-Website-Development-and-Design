@@ -1,5 +1,28 @@
+/* global Router */
+/* global EditingUsers */
+/* global $ */
+/* global Documents */
+/* global Session */
+/* global Template */
+/* global Meteor */
 Meteor.subscribe("documents");
 Meteor.subscribe("editingUsers");
+
+// Router config
+Router.configure({
+    layoutTemplate: "ApplicationLayout"
+});
+
+Router.route("/", function () {
+    this.render("navbar", { to: "header" });
+    this.render("docList", { to: "main" });
+});
+
+Router.route("/documents/:_id", function () {
+    Session.set("docid", this.params._id);
+    this.render("navbar", { to: "header" });
+    this.render("docItem", { to: "main" });
+});
 
 // Session.set("current_date", new Date());
     
@@ -69,6 +92,12 @@ Template.editor.helpers({
 });
 
 Template.navbar.helpers({
+    documents: function () {
+        return Documents.find();
+    }
+});
+
+Template.docList.helpers({
     documents: function () {
         return Documents.find();
     }
