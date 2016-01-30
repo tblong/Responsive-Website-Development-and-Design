@@ -4,7 +4,7 @@
         <div class="container">
             <!-- nav header -->
             <div class="navbar-header">
-                <a href="#" class="navbar-brand">TextCircle</a>
+                <a href="/" class="navbar-brand">TextCircle</a>
 
             </div>
             <!-- / nav header -->
@@ -15,7 +15,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {{#each documents}}
-                        <li><a href="#" class="js-load-doc">{{title}}</a></li>
+                        <li><a href="/documents/{{_id}}">{{title}}</a></li>
                         {{/each}}
                     </ul>
                 </li>

@@ -1,4 +1,14 @@
 Meteor.methods({
+    addComment: function (comment) {
+        console.log("entry adding comment method");
+        if (this.userId) {
+            console.log("adding comment method");
+            // comment.createdOn = new Date();
+            comment.owner = this.userId;
+            return Comments.insert(comment);
+        }
+        return;
+    },
     updateDocPrivacy: function (doc) {
         // console.log(doc);
         var realDoc = Documents.findOne({ _id: doc._id, owner: this.userId });

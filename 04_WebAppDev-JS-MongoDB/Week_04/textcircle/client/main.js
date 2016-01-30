@@ -7,6 +7,7 @@
 /* global Meteor */
 Meteor.subscribe("documents");
 Meteor.subscribe("editingUsers");
+Meteor.subscribe("comments");
 
 // Router config
 Router.configure({
@@ -37,6 +38,20 @@ Router.route("/documents/:_id", function () {
 //         return Session.get("current_date");
 //     }
 // });
+
+// comment list helpers
+Template.commentList.helpers({
+    comments: function () {
+        return Comments.find({ docid: Session.get("docid") });
+    }
+});
+
+// comment form helpers
+Template.insertCommentForm.helpers({
+    docid: function () {
+        return Session.get("docid");
+    }
+});
     
 // editing users helpers
 Template.editingUsers.helpers({

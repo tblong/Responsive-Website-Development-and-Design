@@ -1,3 +1,7 @@
 == 2016-01-27 ==
+- "meteor shell" for debugging
+- difference b/t 'find' and 'findOne'
+    - find returns a cursor for iterating through the collection
+    - findOne returns a document
 - 
     
