@@ -14,6 +14,11 @@
     </div>
 </template>
 
+<!-- loading template-->
+<template name="loading">
+    {{> spinner}}
+</template>
+
 <!-- top level template for the nav bar -->
 <template name="navbar">
     <nav class="navbar navbar-default">
@@ -85,6 +90,6 @@
 
 <!-- simple template that displays a message -->
 <template name="chat_message">
-    <img class="small_avatar" src="/{{avatar}}" alt="avatar"> {{userName}} @ {{getTime}} said: {{text}}
+    <img class="small_avatar" src="/{{avatar}}" alt="avatar"><span class="message-info"> {{userName}} @ {{getTime}} said:</span> {{{parseEmoticons text}}}
     <br>
 </template>

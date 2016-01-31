@@ -10,6 +10,9 @@
 }
 
 .small_avatar{
-    max-height: 24px;
     max-width: 24px;
+}
+
+.message-info{
+    color: mediumblue;
 }
