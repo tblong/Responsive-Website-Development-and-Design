@@ -1,0 +1,109 @@
+<head>
+    <title>textcircle</title>
+</head>
+
+<body>
+    <!-- main nav -->
+    {{> navbar}}
+
+    <!-- / main nav-->
+
+    <div class="container">
+
+        <!-- current doc info -->
+        <div class="row">
+            <div class="col-md-12">
+                {{> docMeta}}
+            </div>
+        </div>
+
+        <!-- editing users -->
+        <div class="row">
+            <div class="col-md-12" id="editors_list">
+                {{> editingUsers}}
+            </div>
+        </div>
+
+        <!-- 2 column grid -->
+        <div class="row">
+            <div class="col-md-6">
+                {{> editor}}
+            </div>
+            <div class="col-md-6">
+                {{> viewer}}
+            </div>
+        </div>
+
+    </div>
+
+    <!--{{> date_display}}-->
+
+</body>
+
+<!-- date display template -->
+<!--<template name="date_display">
+    {{current_date}}
+</template>-->
+
+<!-- navbar template -->
+<template name="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- nav header -->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">TextCircle</a>
+
+            </div>
+            <!-- / nav header -->
+
+            <ul class="nav navbar-nav">
+                <li><a href="#" class="js-add-doc"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> new document</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {{#each documents}}
+                        <li><a href="#" class="js-load-doc">{{title}}</a></li>
+                        {{/each}}
+                    </ul>
+                </li>
+                <!--<li>
+                    <button type="button" class="btn btn-default btn-sm navbar-btn">
+                        <span class="glyphicon glyphicon-plus"></span><a href="#">New Document</a></button>
+                </li>-->
+            </ul>
+
+            <!-- login buttons -->
+            <ul class="nav navbar-nav navbar-right">
+                {{> loginButtons}}
+            </ul>
+        </div>
+    </nav>
+</template>
+
+<!-- editing users template -->
+<template name="docMeta">
+    {{#with document}}
+    <span class="h1">{{> editableText collection="documents" field="title"}}</span> {{#if canEdit}}
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" class="js-tog-private"> Private
+        </label>
+    </div>
+    {{/if}} {{/with}}
+</template>
+
+<!-- editing users template -->
+<template name="editingUsers">
+    Editors: {{#each users}}
+    <span class="label label-info">{{firstname}}</span> {{/each}}
+</template>
+
+<!-- viewer template -->
+<template name="viewer">
+    <iframe id="viewer_iframe" frameborder="0"></iframe>
+</template>
+
+<!-- editor template -->
+<template name="editor">
+    {{> sharejsCM docid=docid onRender=config id="editor"}}
+</template>

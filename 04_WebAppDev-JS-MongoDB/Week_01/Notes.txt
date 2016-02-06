@@ -1,0 +1,6 @@
+== 2016-01-09 ==
+- reviewing reactive objects in meteor and when to use each
+- run meteor in production mode to check minified code
+    - meteor run --production
+- http://codemirror.net/doc/manual.html#api
+- 

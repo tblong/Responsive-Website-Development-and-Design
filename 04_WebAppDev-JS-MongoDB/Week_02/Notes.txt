@@ -1,0 +1,12 @@
+== 2016-01-12 ==
+- mongo db commands
+    - show collections
+    - db.<collectionName>.findOne()
+    - db.<collectionName>.find().count()
+    - db.<collectionName>.find().pretty()
+
+== 2016-01-16 ==
+- more mongo db commands
+    - db.<collectionName>.remove({}): removes all entries from collection
+    - 
+    

@@ -1,0 +1,5 @@
+== 2016-01-24 ==
+- Meteor methods control write access: insert, delete, upsert
+- Meteor publish and subscribe to control read access: find and findOne
+- 
+    
