@@ -1,12 +1,13 @@
+/* global Router */
 // iron:router config
 Router.configure({
-    layoutTemplate: "layout"
+    layoutTemplate: 'layout'
 });
 
-Router.route("/", function () {
-    this.render("home");
+Router.route('/', function () {
+    this.render('home');
 });
 
-Router.route("/projects", function () {
-    this.render("projects");
+Router.route('/news', function () {
+    this.render('news');
 });
