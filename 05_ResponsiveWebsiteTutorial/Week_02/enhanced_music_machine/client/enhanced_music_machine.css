@@ -10,3 +10,11 @@ div.vertical-center{
 .progress{
     height: 20px;
 }
+
+body{
+    background: #000 url("../record.jpg") no-repeat center center;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+}

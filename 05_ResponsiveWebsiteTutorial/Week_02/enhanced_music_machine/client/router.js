@@ -1,3 +1,4 @@
+/* global Meteor */
 /* global Router */
 // set up the main template the the router will use to build pages
 Router.configure({
@@ -13,5 +14,9 @@ Router.route('/', {
     action: function () {
         this.render("navbar", { to: "header" });
         this.render("home", { to: "main" });
+    },
+    onAfterAction: function() {
+        console.log($("#mixer"));
+        $("#mixer").toggleClass("active");
     }
 });
