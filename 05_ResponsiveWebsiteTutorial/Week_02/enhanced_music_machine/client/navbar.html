@@ -14,8 +14,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <!-- TODO, add active class dynamically here -->
-                    <li><a id="mixer" href="/mixer">Load Mixer</a></li>
-                    <li><a id="credits-nav" href="/credits">Credits</a></li>
+                    <li class="{{isActivePath '/mixer'}}" id="mixer-nav"><a href="/mixer">Load Mixer</a></li>
+                    <li class="{{isActivePath '/credits'}}" id="credits-nav"><a href="/credits">Credits</a></li>
                 </ul>
             </div>
         </div>
