@@ -8,7 +8,7 @@ Router.configure({
 });
 
 // specify the top level route, the page users see when they arrive at the site
-Router.route('/', {
+Router.route("/", {
     waitOn: function () {
         console.log("router: waiting on musicMachine subscription");
         return Meteor.subscribe("musicMachine");
@@ -19,4 +19,10 @@ Router.route('/', {
         this.render("home", { to: "main" });
     }
 
+});
+
+//  credits route
+Router.route("/credits", function () {
+    this.render("navbar", { to: "header" });
+    this.render("credits", { to: "main" });
 });
