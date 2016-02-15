@@ -1,14 +1,14 @@
 //playground.js
 
-maxim1 = new Maxim();
-maxim2 = new Maxim();
-maxim3 = new Maxim();
-player1 = maxim1.loadFile("drums1.wav");
-player1.setLooping(true);
-player2 = maxim2.loadFile("bassline.wav");
-player2.setLooping(true);
-player3 = maxim3.loadFile("arp.wav");
-player3.setLooping(true);
+// maxim1 = new Maxim();
+// maxim2 = new Maxim();
+// maxim3 = new Maxim();
+// player1 = maxim1.loadFile("drums1.wav");
+// player1.setLooping(true);
+// player2 = maxim2.loadFile("bassline.wav");
+// player2.setLooping(true);
+// player3 = maxim3.loadFile("arp.wav");
+// player3.setLooping(true);
 
 playDrums = function () {
     player1.volume(1);

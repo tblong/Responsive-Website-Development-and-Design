@@ -10,11 +10,9 @@ Router.configure({
 // specify the top level route, the page users see when they arrive at the site
 Router.route("/", {
     waitOn: function () {
-        console.log("router: waiting on musicMachine subscription");
         return Meteor.subscribe("musicMachine");
     },
     action: function () {
-        console.log("router: in action");
         this.render("navbar", { to: "header" });
         this.render("home", { to: "main" });
     }
@@ -25,4 +23,15 @@ Router.route("/", {
 Router.route("/credits", function () {
     this.render("navbar", { to: "header" });
     this.render("credits", { to: "main" });
+});
+
+// mixer route
+Router.route("/mixer", {
+    waitOn: function () {
+        return Meteor.subscribe("musicMachine");
+    },
+    action: function () {
+        this.render("navbar", { to: "header" });
+        this.render("mixer", { to: "main" });
+    }
 });
