@@ -1,0 +1,27 @@
+<head>
+    <title>1-wall</title>
+</head>
+
+<body>
+    {{> wall}}
+</body>
+
+<template name="wall">
+
+    <h1>{{title}}</h1>
+    <button class='clear'>Clear</button>
+    <button class='red'>Red</button>
+    <button class='blue'>Blue</button>
+    <button class='green'>Green</button>
+    <button class='black'>Black</button>
+    <button class='white'>White</button>
+    <button class='thicker'>Thicker</button>
+    <button class='thinner'>Thinner</button>
+
+    {{> canvas}}
+
+</template>
+
+<template name="canvas">
+    <div id='canvas'></div>
+</template>
