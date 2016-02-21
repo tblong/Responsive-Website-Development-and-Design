@@ -1,3 +1,4 @@
+/* global $ */
 /* global Maxim */
 /* global sounds */
 /* global tracks */
@@ -8,6 +9,7 @@
 // 
 // client code
 // 
+
 
 // list of tracks to load
 Session.set("tracksLoaded", false);

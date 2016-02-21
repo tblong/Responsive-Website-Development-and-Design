@@ -1,3 +1,4 @@
+/* global Meteor */
 // 
 // server code
 // 

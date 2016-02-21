@@ -1,3 +1,4 @@
+/* global MusicMachine */
 /* global Mongo */
 // list of collections
 

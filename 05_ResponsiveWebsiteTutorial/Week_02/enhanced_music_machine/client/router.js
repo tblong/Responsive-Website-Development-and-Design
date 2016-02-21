@@ -2,6 +2,9 @@
 /* global Meteor */
 /* global Router */
 // set up the main template the the router will use to build pages
+
+    
+// console.log("meteor startup called on client");
 Router.configure({
     layoutTemplate: 'layout',
     loadingTemplate: "loading"
