@@ -41,7 +41,43 @@
             {{#each tracks}}
             <div class="list-group-item" data-trackid="{{@index}}">
                 <h4 class="list-group-item-heading">{{displayName}}</h4>
-                <p>path: {{path}}</p>
+                <p>File Name: {{path}}</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        Volume:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <!-- volume slider -->
+                        <div class="vol-slider" data-trackid="{{@index}}">
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <!-- volume value -->
+                        <div class="vol-value" data-trackid="{{@index}}">
+                            {{getVolume @index}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        Speed:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <!-- speed slider -->
+                        <div class="spd-slider" data-trackid="{{@index}}">
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <!-- speed value-->
+                        <div class="spd-value" data-trackid="{{@index}}">
+                            {{getSpeed @index}}
+                        </div>
+                    </div>
+                </div>
                 <div class="btn-group btn-group-xs" role="group" aria-label="...">
                     <button type="button" class="btn btn-success play-track" data-trackid="{{@index}}">Play Track</button>
                     <button type="button" class="btn btn-warning stop-track" data-trackid="{{@index}}">Mute Track</button>

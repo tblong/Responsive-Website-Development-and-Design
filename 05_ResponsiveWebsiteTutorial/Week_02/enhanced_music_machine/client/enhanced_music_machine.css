@@ -22,3 +22,7 @@ body{
 span.white-text{
     color: white;
 }
+
+div.btn-group{
+    margin-top: 10px;
+}

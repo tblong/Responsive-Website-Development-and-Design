@@ -10,50 +10,50 @@
 // player3 = maxim3.loadFile("arp.wav");
 // player3.setLooping(true);
 
-playDrums = function () {
-    player1.volume(1);
-}
+// playDrums = function () {
+//     player1.volume(1);
+// }
 
-stopDrums = function () {
-    player1.volume(0);
-}
+// stopDrums = function () {
+//     player1.volume(0);
+// }
 
-playBass = function () {
-    player2.volume(1);
-}
+// playBass = function () {
+//     player2.volume(1);
+// }
 
-stopBass = function () {
-    player2.volume(0);
-}
+// stopBass = function () {
+//     player2.volume(0);
+// }
 
-playArp = function () {
-    player3.volume(1);
-}
+// playArp = function () {
+//     player3.volume(1);
+// }
 
-stopArp = function () {
-    player3.volume(0);
-}
+// stopArp = function () {
+//     player3.volume(0);
+// }
 
-playAll = function () {
+// playAll = function () {
 
-    player1.play();
-    player2.play();
-    player3.play();
-}
+//     player1.play();
+//     player2.play();
+//     player3.play();
+// }
 
-stopAll = function () {
+// stopAll = function () {
 
-    player1.stop();
-    player2.stop();
-    player3.stop();
-}
+//     player1.stop();
+//     player2.stop();
+//     player3.stop();
+// }
 
-setSpeed = function (speed) {
+// setSpeed = function (speed) {
 
-    player1.speed(speed);
-    player2.speed(speed);
-    player3.speed(speed);
+//     player1.speed(speed);
+//     player2.speed(speed);
+//     player3.speed(speed);
 
-}
+// }
 
 
