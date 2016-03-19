@@ -1,0 +1,12 @@
+/* CSS declarations go here */
+
+#visjs{
+	height:500px;
+}
+.vis-label{
+	fill-opacity:0;
+}
+
+.vis-label:hover{
+	fill-opacity:1;
+}
