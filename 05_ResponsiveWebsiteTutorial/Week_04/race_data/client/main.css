@@ -1,5 +1,3 @@
-/* CSS declarations go here */
-
 #visjs{
 	height:500px;
 }
@@ -10,8 +8,6 @@
 .vis-label:hover{
 	fill-opacity:1;
 }
-
-/* project css */
 
 div.vertical-center{
     min-height: 100%;
