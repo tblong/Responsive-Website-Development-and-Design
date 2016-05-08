@@ -1,0 +1,48 @@
+<!-- mixer template -->
+<template name="raceData">
+    <div class="container">
+        <!-- main content for mixer -->
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="https://en.wikipedia.org/wiki/2016_Russian_Grand_Prix">2016 Russian Grand Prix</a> @ <a href="https://en.wikipedia.org/wiki/Sochi_Autodrom">Sochi International Street Circuit</a></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>About the data:</h4>
+                        <p>
+                            The graphic below shows each driver's average speed during their fastest lap.  All speeds are in <code>kph</code>.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- visjs container -->
+                        {{> raceData_visjs}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- load the playground template for now -->
+    <!--{{> playground}}-->
+</template>
+
+
+<template name="raceData_visjs">
+    <div id="visjs">vis js place holder</div>
+</template>
+
+
+
+
+
+
+
+
+
+
