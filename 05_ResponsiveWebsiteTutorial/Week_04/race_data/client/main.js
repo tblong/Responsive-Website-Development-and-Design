@@ -16,7 +16,7 @@ Template.raceData.events({
         initBlobVis();
     },
     "click #driver-fastest-lap": function () {
-        initDriverFastestLap(); s
+        initDriverFastestLap();
     }
 });
 
