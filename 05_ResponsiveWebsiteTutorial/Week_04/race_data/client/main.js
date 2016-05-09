@@ -21,17 +21,13 @@ Template.raceData.events({
 });
 
 function initDriverFastestLap() {
-    // TODO
     $.getJSON("20160501_RussianGrandPrixdata.json", function (json) {
-        // console.log(data);
         var results = getRaceResults(json);
         var nodes = [];
         var edges = [];
-        // console.log(results);
 
         // iterate over the drivers in the result set
         $.each(results, function (index, driver) {
-            // print each driver name and speed
             var driverName = driver.Driver.driverId;
             var driverPosition = Number(driver.position);
             var fastestLap = driver.FastestLap;
@@ -43,7 +39,7 @@ function initDriverFastestLap() {
             // push nodes 
             if (fastestLapNumber > 0.0) {
                 nodes.push({
-                    id: index,
+                    id: index + 1,  // wierd bug when id=0 with vis.js
                     value: fastestLapNumber,
                     label: driverName + ":" + driverPosition,
                     title: "Lap#" + fastestLapNumber
@@ -79,23 +75,21 @@ function initDriverFastestLap() {
 
 function initDriverDob() {
     $.getJSON("20160501_RussianGrandPrixdata.json", function (json) {
-        // console.log(data);
         var results = getRaceResults(json);
         var items = [];
-        // console.log(results);
 
         // iterate over the drivers in the result set
         $.each(results, function (index, driver) {
-            // print each driver name and speed
             var driverName = driver.Driver.driverId;
             var driverPosition = Number(driver.position);
             var driverDob = driver.Driver.dateOfBirth;
 
             // push items 
             items.push({
-                id: index,
+                id: index + 1,  // wierd bug when id=0 with vis.js
                 content: driverName + ":" + driverPosition,
-                start: driverDob
+                start: driverDob,
+                title: driverDob
             });
 
         });
@@ -141,7 +135,7 @@ function initBlobVis() {
             // push nodes 
             if (avgSpeed > 1.0) {
                 nodes.push({
-                    id: index,
+                    id: index + 1,  // wierd bug when id=0 with vis.js
                     value: avgSpeed,
                     label: driverName + ":" + driverPosition,
                     title: avgSpeed + "kph"
