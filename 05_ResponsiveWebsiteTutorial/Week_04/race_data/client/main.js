@@ -124,15 +124,12 @@ function initDriverDob() {
 function initBlobVis() {
     // try to get json data
     $.getJSON("20160501_RussianGrandPrixdata.json", function (json) {
-        // console.log(data);
         var results = getRaceResults(json);
         var nodes = [];
         var edges = [];
-        // console.log(results);
 
         // iterate over the drivers in the result set
         $.each(results, function (index, driver) {
-            // print each driver name and speed
             var driverName = driver.Driver.driverId;
             var driverPosition = Number(driver.position);
             var fastestLap = driver.FastestLap;
