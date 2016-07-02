@@ -1,0 +1,28 @@
+/* project css */
+
+div.vertical-center{
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.progress{
+    height: 20px;
+}
+
+body{
+    background: #000 url("../record.jpg") no-repeat center center;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+}
+
+span.white-text{
+    color: white;
+}
+
+div.btn-group{
+    margin-top: 10px;
+}

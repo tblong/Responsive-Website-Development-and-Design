@@ -1,0 +1,96 @@
+<!-- mixer template -->
+<template name="mixer">
+    <div class="container">
+        <!-- main content for mixer -->
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Master DAC Controls</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Click <code>Play All</code> to begin playing all tracks. Click <code>Stop All</code> to stop
+                            all tracks. Click <code>Mute All Tracks</code> to mute all tracks.
+                        </p>
+                        <p>
+                            <span>Last DAC State clicked: {{lastDacState}}</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <span></span>
+                    </div>
+                    <div class="col-md-11">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                            <button id="play-all" type="button" class="btn btn-success">Play All Tracks</button>
+                            <button id="stop-all" type="button" class="btn btn-danger">Stop All Tracks</button>
+                            <button id="mute-all" type="button" class="btn btn-warning">Mute All Tracks</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- list of tracks to include -->
+        <div class="list-group">
+            {{#each tracks}}
+            <div class="list-group-item" data-trackid="{{@index}}">
+                <h4 class="list-group-item-heading">{{displayName}}</h4>
+                <p>File Name: {{path}}</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        Volume:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <!-- volume slider -->
+                        <div class="vol-slider" data-trackid="{{@index}}">
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <!-- volume value -->
+                        <div class="vol-value" data-trackid="{{@index}}">
+                            {{getVolume @index}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        Speed:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <!-- speed slider -->
+                        <div class="spd-slider" data-trackid="{{@index}}">
+                        </div>
+                    </div>
+                    <div class="col-xs-2">
+                        <!-- speed value-->
+                        <div class="spd-value" data-trackid="{{@index}}">
+                            {{getSpeed @index}}
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success play-track" data-trackid="{{@index}}">Play Track</button>
+                    <button type="button" class="btn btn-warning stop-track" data-trackid="{{@index}}">Mute Track</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+
+
+    </div>
+
+
+    <!-- load the playground template for now -->
+    <!--{{> playground}}-->
+</template>

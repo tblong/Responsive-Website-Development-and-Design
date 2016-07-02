@@ -1,0 +1,36 @@
+#visjs{
+	height:500px;
+}
+.vis-label{
+	fill-opacity:0;
+}
+
+.vis-label:hover{
+	fill-opacity:1;
+}
+
+div.vertical-center{
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.progress{
+    height: 20px;
+}
+
+body{
+    background-image: url("../rosberg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 45% 50%;
+}
+
+span.white-text{
+    color: white;
+}
+
+div.btn-group{
+    margin-top: 10px;
+}
