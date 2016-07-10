@@ -16,3 +16,9 @@
         * What can the users do?
         * How can the users do it?
         * What is the user experience going to be like?
+
+* Todo list for week 2:
+    * Define a target audience in terms of demographics and behaviour
+    * List the 4 Ps: Price, Product, Place and Promotion
+    * Identify key resources needed for your project
+    * Define a high level project timeline
