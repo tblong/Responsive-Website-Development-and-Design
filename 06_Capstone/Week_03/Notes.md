@@ -18,6 +18,53 @@
     * calendars
     * meals
 
+## Target audience
+* Anyone needing to collaborate on a meal together
+
+## Price, product, place, and promotion:
+* Price: Free iOS/Android app + web interface. Paid $19.99/year subscription for collaborate features.
+The paid version gives you access to predefined meals database, suggests meals based 
+on patterns and level of difficulty, pantry list contents for meals, share meals 
+and plan with others, geolocation based reminders
+* Product: collaborative meal planning application
+* Place: located in iOS and Android app stores along with web interface
+* Promotion: social media, app stores, and web site
+
+## Key resources needed for this project:
+* open source [fullcalendar.io](http://fullcalendar.io/) project to implement drag/drop calendar features
+* github account 
+* iOS and Android platforms for testing
+* development laptop
+
+## High level project timeline
+* week 3:
+    * get base project created
+    * get linting working
+    * get main and navbar templates working
+    * add all meteor base packages required for project
+    * research how to import `fullcalendar.io` project
+* week 4:
+    * get `fullcalendar.io` displaying calendars correctly
+    * get drag and drop working
+    * add feature to let users create meals and calendars
+    * figure out app folder structure
+    * get `Meals` and `Calendars` collections working
+    * start working out how the user shares a calendar with another user
+    * testing app
+* week 5:
+    * have work in progres app ready for submission
+    * more testing of app
+    * continue working on feature set
+* week 6:
+    * create technical demo video
+    * test and finalize app
+
+## TODO for week 3
+* get base project created
+* get linting working
+* get main and navbar templates working
+* add all meteor base packages required for project
+* research how to import `fullcalendar.io` project
 
 ## Design Specification assignment
 
