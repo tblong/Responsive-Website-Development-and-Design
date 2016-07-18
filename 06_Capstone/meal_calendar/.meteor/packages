@@ -19,3 +19,11 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
+accounts-password
+aldeed:autoform
+aldeed:collection2
+fortawesome:fontawesome
+ian:accounts-ui-bootstrap-3
+sacha:spin
+twbs:bootstrap
+zimme:active-route
