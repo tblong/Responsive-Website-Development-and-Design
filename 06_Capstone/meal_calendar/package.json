@@ -44,6 +44,7 @@
     }
   },
   "dependencies": {
+    "fullcalendar": "^2.9.0",
     "meteor-node-stubs": "~0.2.0"
   },
   "devDependencies": {
