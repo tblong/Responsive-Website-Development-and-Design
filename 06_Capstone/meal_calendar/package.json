@@ -1,12 +1,16 @@
 {
   "name": "meal_calendar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "meteor run",
     "lint": "eslint .",
     "pretest": "npm run lint --silent"
   },
+  "author": {
+    "name": "Tyler B. Long"
+  },
+  "license": "MIT",
   "eslintConfig": {
     "parser": "babel-eslint",
     "parserOptions": {
