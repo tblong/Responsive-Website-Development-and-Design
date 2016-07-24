@@ -28,3 +28,4 @@ sacha:spin
 twbs:bootstrap
 zimme:active-route
 kadira:flow-router
+kadira:blaze-layout
