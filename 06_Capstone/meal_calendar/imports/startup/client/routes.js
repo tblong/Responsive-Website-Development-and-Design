@@ -15,7 +15,7 @@ FlowRouter.route('/', {
   },
 });
 
-// the App_notFound template is used for unknown routes and missing lists
+// the app_notFound template is used for unknown routes and missing lists
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('app_body', { top: 'navbar', main: 'app_notFound' });
