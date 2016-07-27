@@ -1,6 +1,8 @@
-import '../../api/calendars/calendars.js';
-import Meals from '../../api/meals/meals.js';
+// import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
+import { Meals } from '../../api/meals/meals.js';
+import { Calendars } from '../../api/calendars/calendars.js';
 
-console.log('server starup code ran');
+console.log('server st arup code ran');
 console.log('server ' + Meals);
 console.log(Meals.findOne({}));

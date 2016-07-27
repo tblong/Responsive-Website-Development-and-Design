@@ -1,8 +1,8 @@
+import { Meteor } from 'meteor/meteor';
 import './routes.js';
-import '../../api/calendars/calendars.js';
-import { Mongo } from 'meteor/mongo';
-import Meals from '../../api/meals/meals.js';
+// import { Mongo } from 'meteor/mongo';
+import { Meals } from '../../api/meals/meals.js';
+import { Calendars } from '../../api/calendars/calendars.js';
 
-console.log('client ' + Meals.find({}));
+console.log(Meals);
 console.log(Meals.findOne({}));
-

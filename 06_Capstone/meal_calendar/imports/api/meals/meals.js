@@ -1,7 +1,5 @@
 import { Mongo } from 'meteor/mongo';
 
-const Meals = new Mongo.Collection('meals');
+export const Meals = new Mongo.Collection('meals');
 
-// console.log("meals.js" + Meals);
-
-export default Meals;
+// export default Meals;
