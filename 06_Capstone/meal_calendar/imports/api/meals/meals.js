@@ -1,5 +1,5 @@
-import { Mongo } from 'meteor/mongo';
+// import { Mongo } from 'meteor/mongo';
 
-export const Meals = new Mongo.Collection('meals');
+// export const Meals = new Mongo.Collection('meals');
 
-// export default Meals;
+// // export default Meals;
