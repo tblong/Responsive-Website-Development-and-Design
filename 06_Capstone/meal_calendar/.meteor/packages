@@ -28,4 +28,4 @@ zimme:active-route
 kadira:flow-router
 kadira:blaze-layout
 less@2.7.4
-autopublish
+autopublish@1.0.7
