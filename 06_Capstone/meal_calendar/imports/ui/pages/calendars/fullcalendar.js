@@ -1,4 +1,4 @@
-import './calendar.html';
+import './fullcalendar.html';
 import { Template } from 'meteor/templating';
 import fullCalendar from 'fullcalendar';
 
