@@ -1,5 +1,6 @@
 import './calendar.html';
 import { Template } from 'meteor/templating';
+import fullCalendar from 'fullcalendar';
 
 Template.fullcalendar.onRendered(function renderCalendar() {
     const instance = this; // template instance
