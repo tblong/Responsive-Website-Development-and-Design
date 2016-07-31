@@ -29,7 +29,11 @@ FlowRouter.notFound = {
 FlowRouter.route('/meals', {
   name: 'app.meals',
   action() {
-    BlazeLayout.render('app_body', { top: 'navbar', main: 'meals' });
+    if (Meteor.user()) {
+      BlazeLayout.render('app_body', { top: 'navbar', main: 'meals' });
+    }
+    alert('Please create an account and/or login first.');
+    FlowRouter.go('app.home');
   },
 });
 
@@ -37,7 +41,11 @@ FlowRouter.route('/meals', {
 FlowRouter.route('/calendars', {
   name: 'app.calendars',
   action() {
-    BlazeLayout.render('app_body', { top: 'navbar', main: 'calendars' });
+    if (Meteor.user()) {
+      BlazeLayout.render('app_body', { top: 'navbar', main: 'calendars' });
+    }
+    alert('Please create an account and/or login first.');
+    FlowRouter.go('app.home');
   },
 });
 
