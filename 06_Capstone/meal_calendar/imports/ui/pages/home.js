@@ -10,3 +10,14 @@ Template.home.helpers({
         return 'disabled';
     },
 });
+
+
+Template.home.events({
+    'click .js-meals-link, click .js-cals-link'(event) { // eslint-disable-line no-unused-vars
+        if (Meteor.user()) {
+            return;
+        }
+        alert('Please create an account and/or login first.'); // eslint-disable-line no-alert
+        return false; // eslint-disable-line consistent-return
+    },
+});
