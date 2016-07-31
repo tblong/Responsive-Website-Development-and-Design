@@ -8,6 +8,7 @@ import '../../ui/pages/navbar.js';
 import '../../ui/pages/app-not-found.js';
 import '../../ui/pages/meals/meals.js';
 import '../../ui/pages/calendars/calendars.js';
+import '../../ui/pages/instructions/instructions.js';
 
 // root route
 FlowRouter.route('/', {
@@ -37,5 +38,13 @@ FlowRouter.route('/calendars', {
   name: 'app.calendars',
   action() {
     BlazeLayout.render('app_body', { top: 'navbar', main: 'calendars' });
+  },
+});
+
+// the route for instructions
+FlowRouter.route('/instructions', {
+  name: 'app.instructions',
+  action() {
+    BlazeLayout.render('app_body', { top: 'navbar', main: 'instructions' });
   },
 });
