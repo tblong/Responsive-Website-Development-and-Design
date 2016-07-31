@@ -1,4 +1,5 @@
 import './home.html';
+import './footer.js';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
