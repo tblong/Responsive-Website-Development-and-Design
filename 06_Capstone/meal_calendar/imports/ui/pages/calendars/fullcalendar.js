@@ -1,6 +1,6 @@
 import './fullcalendar.html';
 import { Template } from 'meteor/templating';
-import fullCalendar from 'fullcalendar';
+import fullCalendar from 'fullcalendar'; // eslint-disable-line no-unused-vars
 
 Template.fullcalendar.onRendered(function renderCalendar() {
     const instance = this; // template instance
@@ -11,8 +11,4 @@ Template.fullcalendar.onRendered(function renderCalendar() {
         div.addClass(instance.data.class);
     }
     div.fullCalendar(instance.data);
-    console.log('div from fullcalendar');
-    console.log(div);
-    console.log('template instance from fullcalendar');
-    console.log(instance);
 });
