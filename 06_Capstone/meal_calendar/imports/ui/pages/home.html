@@ -3,7 +3,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>Meal Calendar</h1>
-            <p>Login to view <code>My Meals</code> and <code>My Calendars</code>. </p>
+            <p>Login to view <a href="/meals">Meals</a> and <a href="/calendars">Calendars</a>. </p>
             <p><a class="btn btn-primary btn-lg" href="/instructions" role="button">Instructions &raquo;</a></p>
         </div>
     </div>
@@ -12,32 +12,27 @@
         <!-- Example row of columns -->
         <div class="row">
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-                    Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2>Meals</h2>
+                <p>Click below to view and create meals. Each meal created will be dragable onto any calendar.</p>
+                <p><a class="btn btn-default {{isLoggedIn}}" href="/meals" role="button">View Meals &raquo;</a></p>
             </div>
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                    condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-                    Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2>Calendars</h2>
+                <p>Click below to view and create calendars. </p>
+                <!-- disable -->
+                <p><a class="btn btn-default {{isLoggedIn}}" href="/calendars" role="button">View Calendars &raquo;</a></p>
             </div>
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta
-                    felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
-                    massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2>Instructions</h2>
+                <p>Click below to view the instruction for Meal Calendar.</p>
+                <p><a class="btn btn-default" href="/instructions" role="button">View Instructions &raquo;</a></p>
             </div>
         </div>
 
         <hr>
 
         <footer>
-            <p>&copy; 2016 MealCalendar, Inc.</p>
+            <p>&copy; 2016 Meal Calendar, Inc.</p>
         </footer>
     </div>
 </template>
