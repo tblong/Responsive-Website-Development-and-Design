@@ -29,3 +29,4 @@ kadira:flow-router
 kadira:blaze-layout
 less@2.7.4
 autopublish@1.0.7
+mizzao:jquery-ui
