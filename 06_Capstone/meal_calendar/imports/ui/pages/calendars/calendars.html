@@ -1,9 +1,26 @@
 <!-- template for showing the user's calendars -->
 <template name="calendars">
-    <div class="container template_root">
-        calendars template
+    <div class="container-fluid template_root">
+        <div class="row">
+            <div class="col-sm-3">
+                <!-- draggable meal column-->
+                <div id="external-events">
+                    <h4>Draggable Meals</h4>
+                    <!-- TODO: hook to user's meals in mongodb -->
+                    <!-- TODO: error message if no meals found -->
+                    <div class="fc-event">Meal 1</div>
+                    <div class="fc-event">Meal 2</div>
+                    <div class="fc-event">Meal 3</div>
+                    <div class="fc-event">Meal 4</div>
+                    <div class="fc-event">Meal 5</div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <!-- calendar column -->
+                {{> fullcalendar options id="calendar" }}
+            </div>
+        </div>
     </div>
-    <div class="container">
-        {{> fullcalendar customprop='bogus'}}
-    </div>
+    {{> footer }}
+
 </template>
