@@ -5,6 +5,7 @@ div.template_root {
   margin-top: 70px;
 }        
 #external-events {
+    width: 150px;
     padding: 0 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
