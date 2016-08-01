@@ -52,7 +52,7 @@ and plan with others, geolocation based reminders
     * start working out how the user shares a calendar with another user
     * testing app
 * week 5:
-    * have work in progres app ready for submission
+    * have work in progress app ready for submission
     * more testing of app
     * continue working on feature set
 * week 6:
