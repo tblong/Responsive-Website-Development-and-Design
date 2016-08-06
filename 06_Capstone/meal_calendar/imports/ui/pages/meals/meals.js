@@ -38,3 +38,10 @@ Template.meal_list.helpers({
         return meals > 0;
     },
 });
+
+Template.meal_item.events({
+    'click .js-delete-meal'() {
+        const mealId = this.meal._id;
+        Meals.remove({ _id: mealId });
+    },
+});

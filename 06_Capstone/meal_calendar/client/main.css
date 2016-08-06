@@ -13,7 +13,22 @@ div.template_root {
     text-align: left;
 }
 
+#external-events-meals {
+    width: 250px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    text-align: left;
+}
+
 #external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+#external-events-meals h4 {
     font-size: 16px;
     margin-top: 0;
     padding-top: 1em;
@@ -24,13 +39,12 @@ div.template_root {
     cursor: pointer;
 }
 
-/*#external-events p {
-    margin: 1.5em 0;
-    font-size: 11px;
-    color: #666;
+#external-events-meals .fc-event-meals {
+    margin: 10px 0;
+    cursor: pointer;
 }
 
-#external-events p input {
-    margin: 0;
-    vertical-align: middle;
-}*/
+.fa-trash-o {
+    margin: 10px 0;
+    cursor: pointer;
+}

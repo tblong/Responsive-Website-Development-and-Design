@@ -2,10 +2,10 @@
 <template name="meals">
     <div class="container template_root">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 {{> meal_list }}
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-7">
                 {{> meal_form }}
             </div>
         </div>
@@ -16,7 +16,7 @@
 
 <template name="meal_list">
     {{#if hasMeals}}
-        <div id="external-events">
+        <div id="external-events-meals">
             <h4>Your Meals</h4>
             {{#each meal in meals}}
                 {{> meal_item meal=meal}}
@@ -30,11 +30,18 @@
 </template>
 
 <template name="meal_item">
-
-    <div class="fc-event">
-        <!-- TODO: add fontawesome delete button -->
-        {{this.meal.name}}
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="fc-event fc-event-meals">
+                {{this.meal.name}}
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="js-delete-meal"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </div>
     </div>
+
+
 </template>
 
 <template name="meal_form">
