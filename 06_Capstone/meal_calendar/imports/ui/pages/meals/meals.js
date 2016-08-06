@@ -27,7 +27,7 @@ AutoForm.hooks({
 });
 
 // meal_list helpers
-Template.meal_list.helpers({
+Template.mealList.helpers({
     meals() {
         const userId = Meteor.userId();
         return Meals.find({ owner: userId });
@@ -39,9 +39,9 @@ Template.meal_list.helpers({
     },
 });
 
-Template.meal_item.events({
+Template.mealItem.events({
     'click .js-delete-meal'() {
-        const mealId = this.meal._id;
+        const mealId = this.meal._id; // eslint-disable-line no-underscore-dangle
         Meals.remove({ _id: mealId });
         return false;
     },

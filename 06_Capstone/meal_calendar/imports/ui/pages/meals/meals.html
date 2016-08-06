@@ -3,7 +3,7 @@
     <div class="container template_root">
         <div class="row">
             <div class="col-sm-5">
-                {{> meal_list }}
+                {{> mealList }}
             </div>
             <div class="col-sm-7">
                 {{> meal_form }}
@@ -14,12 +14,12 @@
     {{> footer }}
 </template>
 
-<template name="meal_list">
+<template name="mealList">
     {{#if hasMeals}}
         <div id="external-events-meals">
             <h4>Your Meals</h4>
             {{#each meal in meals}}
-                {{> meal_item meal=meal}}
+                {{> mealItem meal=meal}}
             {{/each}}
         </div>
     {{else}}
@@ -29,7 +29,7 @@
 
 </template>
 
-<template name="meal_item">
+<template name="mealItem">
     <div class="row">
         <div class="col-xs-10">
             <div class="fc-event fc-event-meals">
@@ -40,8 +40,6 @@
             <a href="#" class="js-delete-meal"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </div>
     </div>
-
-
 </template>
 
 <template name="meal_form">
