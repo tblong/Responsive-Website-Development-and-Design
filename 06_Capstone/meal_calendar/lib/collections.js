@@ -24,4 +24,11 @@ Meals.attachSchema(new SimpleSchema({
             rows: 4,
         },
     },
+    owner: {
+        type: String,
+        optional: true,
+        autoform: {
+            omit: true,
+        },
+    },
 }));
