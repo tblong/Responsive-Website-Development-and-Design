@@ -8,8 +8,8 @@ import 'meteor/mizzao:jquery-ui';
 
 Template.calendars.onRendered(function renderCals() { // eslint-disable-line prefer-arrow-callback
     // init external events
-    const instance = this; // template instance
-    const div = instance.$(instance.firstNode);
+    // const instance = this; // template instance
+    // const div = instance.$(instance.firstNode);
     $('#external-events .fc-event').each(function initEvents() {
         // store data so the calendar knows to render an event upon drop
         const element = $(this);
