@@ -3,7 +3,7 @@
     <div class="container template_root">
         <div class="row">
             <div class="col-sm-4">
-                list the meals for the user <br> {{> meal }}
+                list the meals for the user <br> {{> meal_list }}
             </div>
             <div class="col-sm-8">
                 {{> meal_form }}
@@ -14,11 +14,7 @@
     {{> footer }}
 </template>
 
-<template name="meal_form">
-    the meal form {{> quickForm id="meal-form" collection="Meals"}}
-</template>
-
-<template name="meal">
+<template name="meal_list">
     template for each meal
     <!-- TODO: make reactive -->
     <ul>
@@ -26,4 +22,8 @@
         <li>meal 2</li>
         <li>meal 3</li>
     </ul>
+</template>
+
+<template name="meal_form">
+    the meal form {{> quickForm id="mealForm" collection="Meals" type="insert"}}
 </template>

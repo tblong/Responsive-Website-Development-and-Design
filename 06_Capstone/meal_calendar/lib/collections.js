@@ -13,6 +13,7 @@ Calendars = new Mongo.Collection('calendars');
 Meals.attachSchema(new SimpleSchema({
     name: {
         type: String,
+        max: 20,
         label: 'Meal Name',
     },
     description: {
