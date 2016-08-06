@@ -6,7 +6,7 @@
                 {{> mealList }}
             </div>
             <div class="col-sm-7">
-                {{> meal_form }}
+                {{> mealForm }}
             </div>
         </div>
 
@@ -42,7 +42,7 @@
     </div>
 </template>
 
-<template name="meal_form">
+<template name="mealForm">
     <h4>Add Meal Form:</h4>
     {{> quickForm id="mealForm" collection="Meals" type="insert"}}
 </template>
