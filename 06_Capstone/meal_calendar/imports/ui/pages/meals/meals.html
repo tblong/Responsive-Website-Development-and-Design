@@ -3,7 +3,7 @@
     <div class="container template_root">
         <div class="row">
             <div class="col-sm-4">
-                list the meals for the user <br> {{> meal_list }}
+                {{> meal_list }}
             </div>
             <div class="col-sm-8">
                 {{> meal_form }}
@@ -15,15 +15,29 @@
 </template>
 
 <template name="meal_list">
-    template for each meal
-    <!-- TODO: make reactive -->
-    <ul>
-        <li>meal 1</li>
-        <li>meal 2</li>
-        <li>meal 3</li>
-    </ul>
+    {{#if hasMeals}}
+        <div id="external-events">
+            <h4>Your Meals</h4>
+            {{#each meal in meals}}
+                {{> meal_item meal=meal}}
+            {{/each}}
+        </div>
+    {{else}}
+        <h4>No meals found:</h4>
+        <p>It looks like you have not created any meals yet. Use the form on this page to create some meals.</p>
+    {{/if}}
+
+</template>
+
+<template name="meal_item">
+
+    <div class="fc-event">
+        <!-- TODO: add fontawesome delete button -->
+        {{this.meal.name}}
+    </div>
 </template>
 
 <template name="meal_form">
-    the meal form {{> quickForm id="mealForm" collection="Meals" type="insert"}}
+    <h4>Add Meal Form:</h4>
+    {{> quickForm id="mealForm" collection="Meals" type="insert"}}
 </template>
