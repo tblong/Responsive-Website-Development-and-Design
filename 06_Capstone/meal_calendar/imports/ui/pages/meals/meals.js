@@ -43,5 +43,6 @@ Template.meal_item.events({
     'click .js-delete-meal'() {
         const mealId = this.meal._id;
         Meals.remove({ _id: mealId });
+        return false;
     },
 });
