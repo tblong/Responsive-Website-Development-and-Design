@@ -54,6 +54,19 @@ FlowRouter.route('/calendars', {
     },
 });
 
+// the route for each calendars
+FlowRouter.route('/calendar/:calId', {
+    name: 'app.calendar',
+    action() {
+        if (Meteor.user()) {
+            BlazeLayout.render('app_body', { top: 'navbar', main: 'calendar' });
+            return;
+        }
+        alert('Please create an account and/or login first.'); // eslint-disable-line no-alert
+        FlowRouter.go('app.home');
+    },
+});
+
 // the route for instructions
 FlowRouter.route('/instructions', {
     name: 'app.instructions',

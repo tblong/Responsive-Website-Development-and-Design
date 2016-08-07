@@ -23,9 +23,17 @@
                 {{> mealItem meal=meal}}
             {{/each}}
         </div>
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Well done!</strong> Go to <a href="/calendars" class="alert-link">Calendars</a> now to create at least
+            one calendar.
+        </div>
     {{else}}
-        <h4>No meals found:</h4>
-        <p>It looks like you have not created any meals yet. Use the form on this page to create some meals.</p>
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Oh snap!</strong>It looks like you have not created any meals yet. Use the form on this page to create
+            some meals first.
+        </div>
     {{/if}}
 </template>
 

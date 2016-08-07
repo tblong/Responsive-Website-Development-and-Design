@@ -6,9 +6,23 @@
                 {{> calList }}
             </div>
             <div class="col-sm-7">
-                <!-- calendar column -->
-                <!--{{> fullcalendar options id="calendar" }}-->
                 {{> calForm }}
+            </div>
+        </div>
+    </div>
+    {{> footer }}
+</template>
+
+<!-- template for showing a particualr calendar -->
+<template name="calendar">
+    <div class="container-fluid template_root">
+        <div class="row">
+            <div class="col-sm-3">
+                {{> calMeals }}
+            </div>
+            <div class="col-sm-9">
+                <!-- calendar column -->
+                {{> fullcalendar options id="calendar" }}
             </div>
         </div>
     </div>
@@ -24,16 +38,23 @@
                 {{> calItem cal=cal}}
             {{/each}}
         </div>
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Well done!</strong> Click a calendar now to view it and add meals.
+        </div>
     {{else}}
-        <h4>No calendars found:</h4>
-        <p>It looks like you have not created any calendars yet. Use the form on this page to create some calendars.</p>
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Oh snap!</strong>It looks like you have not created any calendars yet. Use the form on this page to create
+            some calendars first.
+        </div>
     {{/if}}
 </template>
 
 <template name="calItem">
     <div class="row">
         <div class="col-xs-10">
-            <div class="fc-event fc-event-meals">
+            <div class="fc-event fc-event-meals js-goto-cal">
                 {{this.cal.name}}
             </div>
         </div>

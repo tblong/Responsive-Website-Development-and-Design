@@ -3,7 +3,8 @@
 /* global Meteor:true */
 /* global Meals:true */
 /* global Calendars:true */
-
+/* eslint prefer-arrow-callback: ["error", { "allowNamedFunctions": true }] */
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import './calendars.html';
 import './fullcalendar.js';
 import '../footer.js';
@@ -30,7 +31,7 @@ AutoForm.hooks({
     },
 });
 
-Template.calendars.onRendered(function renderCals() { // eslint-disable-line prefer-arrow-callback
+Template.calendar.onRendered(function renderCals() { // eslint-disable-line prefer-arrow-callback
     // init external events
     // const instance = this; // template instance
     // const div = instance.$(instance.firstNode);
@@ -51,7 +52,7 @@ Template.calendars.onRendered(function renderCals() { // eslint-disable-line pre
     });
 });
 
-Template.calendars.helpers({
+Template.calendar.helpers({
     options(key) {
         return {
             id: key.hash.id,
@@ -88,5 +89,23 @@ Template.calList.helpers({
     cals() {
         const userId = Meteor.userId();
         return Calendars.find({ owner: userId });
+    },
+});
+
+Template.calItem.events({
+    'click .js-delete-cal'() {
+        const instance = Template.instance();
+        const row = $(instance.firstNode);
+        const calId = this.cal._id; // eslint-disable-line no-underscore-dangle
+
+        row.fadeOut(400, function animationComplete() {
+            Calendars.remove({ _id: calId });
+        });
+
+        return false;
+    },
+    'click .js-goto-cal'() {
+        const calendarId = this.cal._id;  // eslint-disable-line no-underscore-dangle
+        FlowRouter.go('app.calendar', { calId: calendarId });
     },
 });
