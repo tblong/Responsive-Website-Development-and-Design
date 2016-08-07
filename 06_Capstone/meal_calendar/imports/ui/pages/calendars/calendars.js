@@ -11,6 +11,7 @@ import '../footer.js';
 import { Template } from 'meteor/templating';
 import fullCalendar from 'fullcalendar'; // eslint-disable-line no-unused-vars
 import 'meteor/mizzao:jquery-ui';
+import { Session } from 'meteor/session';
 
 // autoform hooks
 AutoForm.hooks({
@@ -65,6 +66,16 @@ Template.calendar.helpers({
             droppable: true,
         };
     },
+    calendarName() {
+        const currentCalId = Session.get('currentCalendarId');
+        const name = Calendars.findOne({ _id: currentCalId }).name;
+        return name;
+    },
+    calendarDescription() {
+        const currentCalId = Session.get('currentCalendarId');
+        const description = Calendars.findOne({ _id: currentCalId }).description;
+        return description;
+    },
 });
 
 
@@ -106,6 +117,7 @@ Template.calItem.events({
     },
     'click .js-goto-cal'() {
         const calendarId = this.cal._id;  // eslint-disable-line no-underscore-dangle
+        Session.set('currentCalendarId', calendarId);
         FlowRouter.go('app.calendar', { calId: calendarId });
     },
 });
