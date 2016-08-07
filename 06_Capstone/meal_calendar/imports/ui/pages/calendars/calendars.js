@@ -67,12 +67,12 @@ Template.calendar.helpers({
         };
     },
     calendarName() {
-        const currentCalId = Session.get('currentCalendarId');
+        const currentCalId = Session.get('currentCalendarId'); // eslint-disable-line
         const name = Calendars.findOne({ _id: currentCalId }).name;
         return name;
     },
     calendarDescription() {
-        const currentCalId = Session.get('currentCalendarId');
+        const currentCalId = Session.get('currentCalendarId'); // eslint-disable-line
         const description = Calendars.findOne({ _id: currentCalId }).description;
         return description;
     },
@@ -117,7 +117,7 @@ Template.calItem.events({
     },
     'click .js-goto-cal'() {
         const calendarId = this.cal._id;  // eslint-disable-line no-underscore-dangle
-        Session.set('currentCalendarId', calendarId);
+        Session.set('currentCalendarId', calendarId); // eslint-disable-line
         FlowRouter.go('app.calendar', { calId: calendarId });
     },
 });
