@@ -1,6 +1,8 @@
 /* global AutoForm:true */
 /* global Meteor:true */
 /* global Meals:true */
+/* global $:true */
+/* eslint prefer-arrow-callback: ["error", { "allowNamedFunctions": true }] */
 
 import './meals.html';
 import '../footer.js';
@@ -41,8 +43,14 @@ Template.mealList.helpers({
 
 Template.mealItem.events({
     'click .js-delete-meal'() {
+        const instance = Template.instance();
+        const row = $(instance.firstNode);
         const mealId = this.meal._id; // eslint-disable-line no-underscore-dangle
-        Meals.remove({ _id: mealId });
+
+        row.fadeOut(400, function animationComplete() {
+            Meals.remove({ _id: mealId });
+        });
+
         return false;
     },
 });
