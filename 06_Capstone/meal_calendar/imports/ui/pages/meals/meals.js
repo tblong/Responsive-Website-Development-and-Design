@@ -28,7 +28,7 @@ AutoForm.hooks({
     },
 });
 
-// meal_list helpers
+// mealList helpers
 Template.mealList.helpers({
     meals() {
         const userId = Meteor.userId();

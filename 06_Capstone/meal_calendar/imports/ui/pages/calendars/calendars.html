@@ -4,16 +4,17 @@
         <div class="row">
             <div class="col-sm-3">
                 <!-- draggable meal column-->
-                <div id="external-events">
-                    <h4>Draggable Meals</h4>
-                    <!-- TODO: hook to user's meals in mongodb -->
-                    <!-- TODO: error message if no meals found -->
-                    <div class="fc-event">Meal 1</div>
+                <!--<div id="external-events">
+                    <h4>Draggable Meals</h4>-->
+                <!-- TODO: hook to user's meals in mongodb -->
+                <!-- TODO: error message if no meals found -->
+                <!--<div class="fc-event">Meal 1</div>
                     <div class="fc-event">Meal 2</div>
                     <div class="fc-event">Meal 3</div>
                     <div class="fc-event">Meal 4</div>
-                    <div class="fc-event">Meal 5</div>
-                </div>
+                    <div class="fc-event">Meal 5</div>-->
+                <!--</div>-->
+                {{> calMeals }}
             </div>
             <div class="col-sm-9">
                 <!-- calendar column -->
@@ -23,4 +24,24 @@
     </div>
     {{> footer }}
 
+</template>
+
+<template name="calMeals">
+    {{#if hasMeals}}
+        <div id="external-events">
+            <h4>Draggable Meals</h4>
+            {{#each meal in meals}}
+                {{> calMealItem meal=meal}}
+            {{/each}}
+        </div>
+    {{else}}
+        <h4>No meals found:</h4>
+        <p>It looks like you have not created any meals yet. Go back to <a href="/meals">Meals</a> first.</p>
+    {{/if}}
+</template>
+
+<template name="calMealItem">
+    <div class="fc-event">
+        {{this.meal.name}}
+    </div>
 </template>

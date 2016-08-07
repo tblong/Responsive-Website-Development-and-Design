@@ -1,4 +1,6 @@
 /* global $:true */
+/* global Meteor:true */
+/* global Meals:true */
 import './calendars.html';
 import './fullcalendar.js';
 import '../footer.js';
@@ -38,5 +40,18 @@ Template.calendars.helpers({
             editable: true,
             droppable: true,
         };
+    },
+});
+
+
+Template.calMeals.helpers({
+    meals() {
+        const userId = Meteor.userId();
+        return Meals.find({ owner: userId });
+    },
+    hasMeals() {
+        const userId = Meteor.userId();
+        const meals = Meals.find({ owner: userId }).count();
+        return meals > 0;
     },
 });
