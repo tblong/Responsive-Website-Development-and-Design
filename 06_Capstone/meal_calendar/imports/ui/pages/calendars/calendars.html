@@ -1,0 +1,97 @@
+<!-- template for showing the user's calendars -->
+<template name="calendars">
+    <div class="container template_root">
+        <div class="row">
+            <div class="col-sm-5">
+                {{> calList }}
+            </div>
+            <div class="col-sm-7">
+                {{> calForm }}
+            </div>
+        </div>
+    </div>
+    {{> footer }}
+</template>
+
+<!-- template for showing a particualr calendar -->
+<template name="calendar">
+    <div class="container-fluid template_root">
+        <div class="row">
+            <div class="col-sm-3">
+                {{> calMeals }}
+                <h4>Calendar Name:</h4>
+                <p>{{calendarName}}</p>
+                <h4>Calendar Description:</h4>
+                <p>{{calendarDescription}}</p>
+            </div>
+            <div class="col-sm-9">
+                <!-- calendar column -->
+                {{> fullcalendar options id="calendar" }}
+            </div>
+        </div>
+    </div>
+    {{> footer }}
+</template>
+
+<!-- list of the user's calendars -->
+<template name="calList">
+    {{#if hasCals}}
+        <div id="external-events-meals">
+            <h4>Your Cals</h4>
+            {{#each cal in cals}}
+                {{> calItem cal=cal}}
+            {{/each}}
+        </div>
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Well done!</strong> Click a calendar now to view it and add meals.
+        </div>
+    {{else}}
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Oh snap!</strong>It looks like you have not created any calendars yet. Use the form on this page to create
+            some calendars first.
+        </div>
+    {{/if}}
+</template>
+
+<template name="calItem">
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="fc-event fc-event-meals js-goto-cal">
+                {{this.cal.name}}
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="js-delete-cal"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</template>
+
+<!-- add calendar form template -->
+<template name="calForm">
+    <h4>Add Calendar Form:</h4>
+    {{> quickForm id="calForm" collection="Calendars" type="insert"}}
+</template>
+
+<!-- the meals to show on a calendar page -->
+<template name="calMeals">
+    {{#if hasMeals}}
+        <div id="external-events">
+            <h4>Draggable Meals</h4>
+            {{#each meal in meals}}
+                {{> calMealItem meal=meal}}
+            {{/each}}
+        </div>
+    {{else}}
+        <h4>No meals found:</h4>
+        <p>It looks like you have not created any meals yet. Go back to <a href="/meals">Meals</a> first.</p>
+    {{/if}}
+</template>
+
+<!-- each meal draggable to a calendar -->
+<template name="calMealItem">
+    <div class="fc-event">
+        {{this.meal.name}}
+    </div>
+</template>

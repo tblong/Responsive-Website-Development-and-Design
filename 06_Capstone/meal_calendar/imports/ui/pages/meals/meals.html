@@ -1,0 +1,56 @@
+<!-- template for showing the user's meals -->
+<template name="meals">
+    <div class="container template_root">
+        <div class="row">
+            <div class="col-sm-5">
+                {{> mealList }}
+            </div>
+            <div class="col-sm-7">
+                {{> mealForm }}
+            </div>
+        </div>
+
+    </div>
+    {{> footer }}
+</template>
+
+<!-- list of the user's meals -->
+<template name="mealList">
+    {{#if hasMeals}}
+        <div id="external-events-meals">
+            <h4>Your Meals</h4>
+            {{#each meal in meals}}
+                {{> mealItem meal=meal}}
+            {{/each}}
+        </div>
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Well done!</strong> Go to <a href="/calendars" class="alert-link">Calendars</a> now to create at least
+            one calendar.
+        </div>
+    {{else}}
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Oh snap!</strong>It looks like you have not created any meals yet. Use the form on this page to create
+            some meals first.
+        </div>
+    {{/if}}
+</template>
+
+<template name="mealItem">
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="fc-event fc-event-meals">
+                {{this.meal.name}}
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="js-delete-meal"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</template>
+
+<template name="mealForm">
+    <h4>Add Meal Form:</h4>
+    {{> quickForm id="mealForm" collection="Meals" type="insert"}}
+</template>

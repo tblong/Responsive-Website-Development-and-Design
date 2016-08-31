@@ -1,0 +1,35 @@
+<template name="home">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Meal Calendar</h1>
+            <h2>The collaborative meal planning app</h2>
+            <p>Login to view <a href="/meals" class="js-meals-link">Meals</a> and <a href="/calendars" class="js-cals-link">Calendars</a>.
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="/instructions" role="button">Instructions &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Meals</h2>
+                <p>Click below to view and create meals. Each meal created will be dragable onto any calendar.</p>
+                <p><a class="btn btn-default {{isLoggedIn}}" href="/meals" role="button">View Meals &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Calendars</h2>
+                <p>Click below to view and create calendars. </p>
+                <!-- disable -->
+                <p><a class="btn btn-default {{isLoggedIn}}" href="/calendars" role="button">View Calendars &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Instructions</h2>
+                <p>Click below to view the instruction for Meal Calendar.</p>
+                <p><a class="btn btn-default" href="/instructions" role="button">View Instructions &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    {{> footer }}
+</template>
