@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "fullcalendar": "^2.9.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "~0.2.0"
   },
   "devDependencies": {
